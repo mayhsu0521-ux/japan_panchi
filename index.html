@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026 日本 Long Stay｜May & Vivian</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
+
+/* Welcome */
+#welcome{position:fixed;inset:0;background:linear-gradient(160deg,#1a3a5c,#0f6e56);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:20px;overflow:hidden;}
+#welcome.out{opacity:0;pointer-events:none;transition:opacity .5s;}
+#welcome h1{color:white;font-size:22px;margin-top:12px;text-align:center;}
+#welcome p{color:rgba(255,255,255,.75);font-size:13px;margin-top:6px;text-align:center;}
+#wpw{display:block;width:180px;padding:11px;margin:20px auto 8px;border-radius:12px;border:none;background:rgba(255,255,255,.9);font-size:20px;text-align:center;letter-spacing:6px;color:#1a3a5c;font-weight:500;outline:none;}
+#werr{color:#FFB7CE;font-size:12px;text-align:center;min-height:18px;margin-bottom:6px;}
+#wbtn{display:block;margin:0 auto;padding:12px 36px;border-radius:30px;border:none;background:linear-gradient(135deg,#FF8FAB,#FF6B9D);color:white;font-size:15px;font-weight:500;cursor:pointer;}
+
+/* App */
+.app{max-width:480px;margin:0 auto;background:white;min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.06);}
+@media(min-width:900px){body{padding:30px;display:flex;justify-content:center;align-items:flex-start;}.app{border-radius:20px;}}
+
+/* Tabs */
+.tabs{display:flex;background:white;border-bottom:.5px solid rgba(0,0,0,.1);position:sticky;top:0;z-index:100;overflow-x:auto;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex:1;padding:11px 4px;font-size:11px;color:#888;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;text-align:center;min-width:56px;}
+.tab.on{color:#fff;background:linear-gradient(135deg,#1a3a5c,#0f6e56);border-bottom-color:transparent;font-weight:500;border-radius:8px 8px 0 0;}
+
+/* Sections */
+.sec{display:none;padding:14px 14px 24px;}
+.sec.on{display:block;}
+
+/* Day cards */
+.card{background:white;border:.5px solid rgba(0,0,0,.1);border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.ch{display:flex;align-items:center;gap:10px;padding:10px 13px;cursor:pointer;user-select:none;}
+.dot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;line-height:1.2;text-align:center;}
+.os{background:#E6F1FB;color:#0C447C;}.tk{background:#FBEAF0;color:#72243E;}.yk{background:#EAF3DE;color:#27500A;}.tr2{background:#F1EFE8;color:#444441;}
+.ct{flex:1;}.cl{font-size:13px;font-weight:500;}.cs{font-size:11px;color:#888;margin-top:1px;}
+.arr{font-size:11px;color:#bbb;transition:transform .2s;}.arr.on{transform:rotate(90deg);}
+.cb{display:none;padding:0 13px 12px;border-top:.5px solid rgba(0,0,0,.08);}
+.cb.on{display:block;}
+
+/* Content blocks */
+.green{padding:7px 9px;background:#E1F5EE;border-radius:8px;font-size:12px;color:#085041;margin:6px 0;}
+.amber{background:#FAEEDA;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:12px;color:#633806;}
+.blue{background:#E6F1FB;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:12px;color:#0C447C;}
+.bg-blue{background:#E6F1FB;border-radius:8px;padding:10px 12px;margin:8px 0;}
+.bg-gray{background:#f9f8f6;border-radius:8px;padding:10px 12px;margin:8px 0;}
+.rt{font-size:12px;font-weight:500;margin-bottom:6px;}
+.row{display:flex;gap:8px;padding:5px 0;font-size:12px;color:#666;align-items:flex-start;border-bottom:.5px solid rgba(0,0,0,.08);}
+.row:last-child{border-bottom:none;}
+.num{background:#1a3a5c;color:white;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;margin-top:1px;}
+.lbl{font-size:11px;font-weight:500;color:#888;letter-spacing:.3px;padding:8px 0 4px;border-top:.5px solid rgba(0,0,0,.08);margin-top:4px;}
+.item{padding:6px 0;border-bottom:.5px solid rgba(0,0,0,.08);}.item:last-child{border-bottom:none;}
+.irow{display:flex;align-items:flex-start;gap:8px;}.idot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.18);flex-shrink:0;margin-top:6px;}.ic{flex:1;}
+.in{font-size:13px;}.ih{font-size:11px;color:#185FA5;margin-top:1px;}.is{font-size:11px;color:#888;margin-top:2px;}.ig{font-size:11px;color:#0f6e56;margin-top:2px;}
+.ml{font-size:11px;color:#185FA5;text-decoration:none;display:inline-block;margin-top:2px;margin-right:6px;}
+.badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:8px;margin-right:4px;font-weight:500;}
+.bm{background:#FBEAF0;color:#72243E;}.bv{background:#EAF3DE;color:#27500A;}.bb{background:#E6F1FB;color:#0C447C;}
+.hr{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:.5px solid rgba(0,0,0,.08);font-size:12px;}
+.hn{flex:1;}.hlink{font-size:11px;color:#185FA5;text-decoration:none;}
+.tt{background:#f9f8f6;border-radius:8px;padding:10px 12px;margin:8px 0;}
+.th{font-size:12px;font-weight:500;margin-bottom:8px;display:flex;justify-content:space-between;}
+.tbadge{font-size:10px;background:#E6F1FB;color:#0C447C;padding:2px 6px;border-radius:10px;}
+.tg{display:grid;grid-template-columns:72px 1fr 58px;gap:4px;font-size:10px;color:#aaa;padding-bottom:4px;border-bottom:.5px solid rgba(0,0,0,.08);}
+.tr3{display:grid;grid-template-columns:72px 1fr 58px;gap:4px;align-items:center;padding:5px 0;border-bottom:.5px solid rgba(0,0,0,.08);font-size:12px;}.tr3:last-child{border-bottom:none;}
+.trh{background:#E1F5EE;border-radius:4px;padding:4px 8px;}.trh span{color:#085041;font-weight:500;}.trh small{color:#0f6e56;font-size:11px;}
+.bt{width:100%;border-collapse:collapse;font-size:11px;margin-top:6px;}
+.bt th{background:#f9f8f6;color:#888;padding:4px 7px;text-align:left;font-weight:500;border-bottom:.5px solid rgba(0,0,0,.08);}
+.bt td{padding:4px 7px;border-bottom:.5px solid rgba(0,0,0,.08);}
+.bt tr:last-child td{border-bottom:none;}
+.bth td{background:#E1F5EE;color:#085041;}
+.fc{background:#f9f8f6;border-radius:8px;padding:12px;margin:8px 0;}
+.fh{display:flex;justify-content:space-between;margin-bottom:10px;}.fn{font-size:13px;font-weight:500;}.fs{font-size:11px;color:#888;}
+.fr{display:flex;align-items:center;gap:8px;}.fa{text-align:center;}.fcode{font-size:19px;font-weight:500;}.ft{font-size:12px;color:#888;}.fl{font-size:10px;color:#aaa;}
+.fline{flex:1;height:.5px;background:rgba(0,0,0,.15);position:relative;}.fline::after{content:'▶';position:absolute;right:-4px;top:-8px;font-size:10px;color:#aaa;}
+
+/* Packing */
+.bag-t{font-size:13px;font-weight:500;padding:10px 0 6px;border-bottom:.5px solid rgba(0,0,0,.1);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.bbadge{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:500;}.bc{background:#FBEAF0;color:#72243E;}.bd{background:#E6F1FB;color:#0C447C;}
+.ptitle{font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.4px;padding:6px 0 4px;border-top:.5px dashed rgba(0,0,0,.1);}
+.ptitle:first-child{border-top:none;}
+.pi{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:.5px solid rgba(0,0,0,.08);cursor:pointer;user-select:none;}.pi:last-child{border-bottom:none;}
+.pc{width:20px;height:20px;border:.5px solid rgba(0,0,0,.2);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.pc.ck{background:#0f6e56;border-color:#0f6e56;}.pc.ck::after{content:'';width:5px;height:9px;border:2px solid white;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px);display:block;}
+.pl{font-size:13px;flex:1;}.pl.dn{text-decoration:line-through;color:#bbb;}
+.pgbar{height:4px;background:#eee;border-radius:4px;margin-bottom:10px;overflow:hidden;}
+.pgfill{height:100%;background:#0f6e56;border-radius:4px;transition:width .3s;}
+.pglbl{font-size:12px;color:#888;margin-bottom:8px;}
+
+/* Hotel */
+.hcard{background:white;border:.5px solid rgba(0,0,0,.1);border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.hcard-sub{font-size:11px;color:#888;margin-bottom:4px;}
+.hcard-name{font-size:15px;font-weight:500;margin-bottom:4px;}
+.hcard-info{font-size:12px;color:#888;margin-bottom:8px;}
+.school-card{background:white;border:.5px solid rgba(0,0,0,.1);border-radius:12px;padding:16px;margin-top:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.slogan{font-size:15px;font-weight:700;color:#E24B4A;margin-bottom:12px;}
+
+/* Shop */
+.si{padding:7px 0;border-bottom:.5px solid rgba(0,0,0,.08);font-size:13px;}.si:last-child{border-bottom:none;}
+.sn{font-size:11px;color:#888;margin-top:2px;}
+.stag{display:inline-block;font-size:10px;padding:1px 6px;border-radius:6px;background:#FAEEDA;color:#633806;margin-right:4px;}
+
+/* Budget */
+.bk-sum{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.bk-c{background:white;border:.5px solid rgba(0,0,0,.1);border-radius:12px;padding:14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.bk-cl{font-size:11px;color:#888;margin-bottom:6px;}
+.bk-cv{font-size:18px;font-weight:700;}
+.bk-cv.may{color:#72243E;}.bk-cv.viv{color:#27500A;}.bk-cv.tot{color:#1a3a5c;}.bk-cv.shr{color:#0f6e56;}
+.bk-form{background:white;border:.5px solid rgba(0,0,0,.1);border-radius:12px;padding:14px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.bk-ft{font-size:13px;font-weight:500;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+.bk-inp{flex:1;min-width:0;padding:9px 11px;border:.5px solid rgba(0,0,0,.15);border-radius:8px;font-size:13px;font-family:'Noto Sans TC',sans-serif;background:#f9f8f6;outline:none;color:#1a1a1a;}
+.bk-inp:focus{border-color:#185FA5;background:white;}
+.bk-sel{padding:9px 11px;border:.5px solid rgba(0,0,0,.15);border-radius:8px;font-size:12px;font-family:'Noto Sans TC',sans-serif;background:#f9f8f6;outline:none;color:#1a1a1a;}
+.bk-row{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.bk-btn{width:100%;padding:11px;border-radius:10px;border:none;background:linear-gradient(135deg,#1a3a5c,#0f6e56);color:white;font-size:14px;font-weight:500;cursor:pointer;}
+.bk-wrap{background:white;border:.5px solid rgba(0,0,0,.1);border-radius:12px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.bk-head{display:grid;grid-template-columns:1fr 68px 78px 30px;gap:4px;padding:8px 13px;background:#f9f8f6;font-size:11px;font-weight:500;color:#888;border-bottom:.5px solid rgba(0,0,0,.08);}
+.bk-row2{display:grid;grid-template-columns:1fr 68px 78px 30px;gap:4px;padding:9px 13px;border-bottom:.5px solid rgba(0,0,0,.08);align-items:center;font-size:12px;}.bk-row2:last-child{border-bottom:none;}
+.bk-row2:hover{background:#f9f8f6;}
+.bk-desc{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;}
+.bk-date{font-size:11px;color:#888;}
+.bk-amt{font-weight:500;text-align:right;font-size:12px;}
+.bk-amt.may{color:#72243E;}.bk-amt.viv{color:#27500A;}.bk-amt.share{color:#1a3a5c;}
+.bk-del{background:none;border:none;cursor:pointer;color:#ddd;font-size:15px;padding:0;transition:color .15s;}.bk-del:hover{color:#E24B4A;}
+.bk-tag{display:inline-block;font-size:10px;padding:1px 5px;border-radius:5px;margin-right:2px;}
+.bk-tag.may{background:#FBEAF0;color:#72243E;}.bk-tag.viv{background:#EAF3DE;color:#27500A;}.bk-tag.share{background:#E6F1FB;color:#0C447C;}
+.bk-empty{padding:24px;text-align:center;color:#888;font-size:13px;}
+.bk-filters{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.bk-fb{padding:5px 12px;border-radius:20px;border:.5px solid rgba(0,0,0,.1);background:#f9f8f6;font-size:12px;cursor:pointer;color:#888;transition:all .15s;}
+.bk-fb.on{background:#1a3a5c;color:white;border-color:#1a3a5c;}
+.bk-clr{width:100%;padding:9px;border-radius:10px;border:.5px solid #E24B4A;background:none;color:#E24B4A;font-size:12px;cursor:pointer;margin-top:4px;}
+.bk-man{width:100%;padding:9px;border-radius:10px;border:.5px solid #185FA5;background:none;color:#185FA5;font-size:12px;cursor:pointer;margin-top:8px;}
+.bk-note{display:none;background:#E6F1FB;border-radius:8px;padding:10px;margin-bottom:10px;font-size:12px;color:#0C447C;line-height:1.7;}
+.ratenote{font-size:10px;color:#aaa;text-align:right;margin-top:-4px;margin-bottom:8px;}
+
+/* Translation */
+.tr-btn{background:none;border:none;cursor:pointer;font-size:13px;padding:2px 3px;opacity:.7;vertical-align:middle;margin-left:3px;}
+.tr-btn:hover{opacity:1;}
+.tr-btn.sp{animation:blink .6s infinite alternate;}
+@keyframes blink{from{opacity:.4}to{opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- Welcome Screen -->
+<div id="welcome">
+  <svg viewBox="0 0 300 195" width="280" xmlns="http://www.w3.org/2000/svg">
+    <!-- flowers -->
+    <circle cx="28" cy="25" r="7" fill="#FFB7CE" opacity=".5"/><circle cx="44" cy="15" r="5.5" fill="#FF8FAB" opacity=".45"/><circle cx="58" cy="24" r="5.5" fill="#FFB7CE" opacity=".45"/>
+    <circle cx="242" cy="20" r="7" fill="#FFB7CE" opacity=".5"/><circle cx="258" cy="11" r="5.5" fill="#FF8FAB" opacity=".45"/><circle cx="272" cy="22" r="5.5" fill="#FFB7CE" opacity=".45"/>
+    <!-- May left -->
+    <ellipse cx="62" cy="102" rx="11" ry="13" fill="#8B5A2B"/><rect x="51" y="102" width="4" height="11" rx="2" fill="#8B5A2B"/><rect x="73" y="102" width="4" height="9" rx="2" fill="#8B5A2B"/>
+    <ellipse cx="62" cy="101" rx="10" ry="10" fill="#FDDBB4"/>
+    <ellipse cx="62" cy="93" rx="11" ry="6" fill="#8B5A2B"/><ellipse cx="53" cy="97" rx="3" ry="4.5" fill="#8B5A2B"/><ellipse cx="71" cy="97" rx="3" ry="4.5" fill="#8B5A2B"/>
+    <ellipse cx="58.5" cy="100" rx="1.9" ry="1.9" fill="#333"/><ellipse cx="66.5" cy="100" rx="1.9" ry="1.9" fill="#333"/>
+    <circle cx="59.2" cy="99.3" r=".7" fill="white"/><circle cx="67.2" cy="99.3" r=".7" fill="white"/>
+    <ellipse cx="54.5" cy="104" rx="2.3" ry="1.4" fill="#F8B4C0" opacity=".7"/><ellipse cx="69.5" cy="104" rx="2.3" ry="1.4" fill="#F8B4C0" opacity=".7"/>
+    <path d="M59.5 107 Q62 109.5 64.5 107" stroke="#c87" stroke-width="1" fill="#FFB7C5" opacity=".6" stroke-linecap="round"/>
+    <rect x="53" y="112" width="18" height="14" rx="4" fill="#FF8FAB"/>
+    <path d="M54 116 Q48 122 47 127" stroke="#FDDBB4" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M71 116 Q77 122 78 127" stroke="#FDDBB4" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <rect x="55" y="126" width="7" height="9" rx="2.5" fill="#FF8FAB"/><rect x="64" y="126" width="7" height="9" rx="2.5" fill="#FF8FAB"/>
+    <ellipse cx="58.5" cy="135" rx="3.5" ry="1.8" fill="white"/><ellipse cx="67.5" cy="135" rx="3.5" ry="1.8" fill="white"/>
+    <!-- Punch monkey doll -->
+    <ellipse cx="138" cy="142" rx="9" ry="9" fill="#8B5A2B"/><ellipse cx="138" cy="145" rx="6.5" ry="6" fill="#c8956c"/>
+    <ellipse cx="129.5" cy="142" rx="4.5" ry="4.5" fill="#8B5A2B"/><ellipse cx="129.5" cy="142" rx="3" ry="3" fill="#c8956c"/>
+    <ellipse cx="146.5" cy="142" rx="4.5" ry="4.5" fill="#8B5A2B"/><ellipse cx="146.5" cy="142" rx="3" ry="3" fill="#c8956c"/>
+    <line x1="134.5" y1="140" x2="137" y2="142.5" stroke="#3d2200" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="137" y1="140" x2="134.5" y2="142.5" stroke="#3d2200" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="139" y1="140" x2="141.5" y2="142.5" stroke="#3d2200" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="141.5" y1="140" x2="139" y2="142.5" stroke="#3d2200" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M134 147 Q138 150.5 142 147" stroke="#8a5848" stroke-width="1" fill="none" stroke-linecap="round" stroke-dasharray="2,1"/>
+    <ellipse cx="138" cy="155" rx="7" ry="7" fill="#8B5A2B"/><ellipse cx="138" cy="156" rx="4.5" ry="5" fill="#c8956c"/>
+    <!-- Punch body -->
+    <ellipse cx="150" cy="137" rx="13" ry="12" fill="#3a3530"/><ellipse cx="150" cy="139" rx="8" ry="8" fill="#7a7570"/>
+    <ellipse cx="136" cy="121" rx="6" ry="6" fill="#3a3530"/><ellipse cx="136" cy="121" rx="4" ry="4" fill="#C09888"/>
+    <ellipse cx="164" cy="121" rx="6" ry="6" fill="#3a3530"/><ellipse cx="164" cy="121" rx="4" ry="4" fill="#C09888"/>
+    <ellipse cx="150" cy="117" rx="13" ry="12" fill="#3a3530"/>
+    <ellipse cx="150" cy="107" rx="12" ry="6.5" fill="#2a2520"/><circle cx="141" cy="109" r="3.5" fill="#2a2520"/><circle cx="159" cy="109" r="3.5" fill="#2a2520"/>
+    <ellipse cx="150" cy="120" rx="9.5" ry="9" fill="#D4A088"/>
+    <ellipse cx="144.5" cy="116" rx="3.8" ry="3.8" fill="#B09080"/><ellipse cx="155.5" cy="116" rx="3.8" ry="3.8" fill="#B09080"/>
+    <ellipse cx="144.5" cy="116" rx="2.7" ry="2.7" fill="#f5e8c0"/>
+    <ellipse cx="144.5" cy="116" rx="2" ry="2.2" fill="#1a0a00"/>
+    <circle cx="145.3" cy="114.8" r=".9" fill="white"/><ellipse cx="155.5" cy="116" rx="2.7" ry="2.7" fill="#f5e8c0"/>
+    <ellipse cx="155.5" cy="116" rx="2" ry="2.2" fill="#1a0a00"/>
+    <circle cx="156.3" cy="114.8" r=".9" fill="white"/>
+    <ellipse cx="150" cy="122" rx="2.8" ry="2" fill="#A87060"/>
+    <path d="M147 125 Q150 127.5 153 125" stroke="#8a5848" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="140" cy="122" rx="2.8" ry="1.6" fill="#e8917a" opacity=".55"/>
+    <ellipse cx="160" cy="122" rx="2.8" ry="1.6" fill="#e8917a" opacity=".55"/>
+    <path d="M138 131 Q130 135 128 142" stroke="#3a3530" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <path d="M162 131 Q170 135 171 142" stroke="#3a3530" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="143" cy="150" rx="5" ry="3.5" fill="#3a3530"/><ellipse cx="157" cy="150" rx="5" ry="3.5" fill="#3a3530"/>
+    <!-- Cat -->
+    <ellipse cx="92" cy="167" rx="15" ry="14" fill="#E8833A"/><ellipse cx="92" cy="163" rx="12.5" ry="11.5" fill="#F0A060"/>
+    <polygon points="82,152 86,161 79,161" fill="#E8833A"/><polygon points="83,154 86,160 80,160" fill="#FFB899"/>
+    <polygon points="102,152 98,161 105,161" fill="#E8833A"/><polygon points="101,154 98,160 104,160" fill="#FFB899"/>
+    <ellipse cx="87" cy="162" rx="2.8" ry="2.3" fill="#4a9f4a"/><ellipse cx="87" cy="162" rx="1.4" ry="1.9" fill="#1a1a1a"/>
+    <ellipse cx="97" cy="162" rx="2.8" ry="2.3" fill="#4a9f4a"/><ellipse cx="97" cy="162" rx="1.4" ry="1.9" fill="#1a1a1a"/>
+    <circle cx="87.6" cy="161" r=".65" fill="white"/><circle cx="97.6" cy="161" r=".65" fill="white"/>
+    <ellipse cx="92" cy="165.5" rx="1.7" ry="1.1" fill="#E87090"/>
+    <path d="M89.5 168 Q92 170 94.5 168" stroke="#C86820" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <line x1="77" y1="165" x2="85" y2="165.5" stroke="white" stroke-width=".8" opacity=".8"/>
+    <line x1="77" y1="167.5" x2="85" y2="167" stroke="white" stroke-width=".8" opacity=".8"/>
+    <line x1="99" y1="165.5" x2="107" y2="165" stroke="white" stroke-width=".8" opacity=".8"/>
+    <line x1="99" y1="167" x2="107" y2="167.5" stroke="white" stroke-width=".8" opacity=".8"/>
+    <!-- Vivian right -->
+    <rect x="218" y="96" width="5" height="30" rx="2.5" fill="#1a1a1a"/><rect x="238" y="96" width="5" height="25" rx="2.5" fill="#1a1a1a"/>
+    <ellipse cx="228" cy="102" rx="12" ry="14" fill="#1a1a1a"/>
+    <ellipse cx="228" cy="101" rx="10" ry="10" fill="#FDDBB4"/>
+    <ellipse cx="228" cy="93" rx="11" ry="6" fill="#1a1a1a"/><ellipse cx="219" cy="97" rx="3" ry="4.5" fill="#1a1a1a"/>
+    <path d="M219 91 Q228 86 237 92" fill="#1a1a1a"/>
+    <ellipse cx="224" cy="100" rx="1.9" ry="1.9" fill="#333"/><ellipse cx="232" cy="100" rx="1.9" ry="1.9" fill="#333"/>
+    <circle cx="224.7" cy="99.3" r=".7" fill="white"/><circle cx="232.7" cy="99.3" r=".7" fill="white"/>
+    <ellipse cx="219.5" cy="104" rx="2.3" ry="1.4" fill="#F8B4C0" opacity=".7"/><ellipse cx="236.5" cy="104" rx="2.3" ry="1.4" fill="#F8B4C0" opacity=".7"/>
+    <path d="M225.5 107 Q228 109.5 230.5 107" stroke="#c87" stroke-width="1" fill="#FFB7C5" opacity=".6" stroke-linecap="round"/>
+    <rect x="219" y="112" width="18" height="14" rx="4" fill="#f0f0f0"/>
+    <path d="M220 116 Q214 122 213 127" stroke="#FDDBB4" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M237 116 Q243 122 244 127" stroke="#FDDBB4" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <rect x="221" y="126" width="7" height="9" rx="2.5" fill="#e8e8e8"/><rect x="230" y="126" width="7" height="9" rx="2.5" fill="#e8e8e8"/>
+    <ellipse cx="224.5" cy="135" rx="3.5" ry="1.8" fill="#ccc"/><ellipse cx="233.5" cy="135" rx="3.5" ry="1.8" fill="#ccc"/>
+    <text x="110" y="92" font-size="11" fill="#FFB7CE" opacity=".8" font-family="sans-serif">♡</text>
+    <text x="178" y="88" font-size="9" fill="#FFB7CE" opacity=".75" font-family="sans-serif">♡</text>
+    <text x="144" y="84" font-size="8" fill="#FFD700" opacity=".7" font-family="sans-serif">★</text>
+  </svg>
+  <h1>2026 日本 Long Stay</h1>
+  <p>May · Vivian · Meow Meow · パンチ</p>
+  <input id="wpw" type="password" maxlength="8" placeholder="••••" autocomplete="off"/>
+  <div id="werr"></div>
+  <button id="wbtn">出發！✈️</button>
+</div>
+
+<!-- Main App -->
+<div class="app">
+<!-- Hero SVG Banner -->
+<svg viewBox="0 0 420 175" width="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a3a5c"/><stop offset="100%" stop-color="#0f6e56"/></linearGradient></defs>
+  <rect width="420" height="175" fill="url(#bg)"/>
+
+  <!-- 天氣 & 日期 -->
+  <rect x="6" y="6" width="258" height="30" rx="8" fill="rgba(0,0,0,.28)"/>
+  <text id="sv-date" x="14" y="18" font-size="10" font-weight="500" fill="white" font-family="sans-serif">--月--日</text>
+  <text id="sv-wd" x="14" y="29" font-size="9" fill="rgba(255,255,255,.7)" font-family="sans-serif">週--</text>
+  <text id="sv-loc" x="72" y="18" font-size="10" font-weight="500" fill="white" font-family="sans-serif">📍定位中</text>
+  <text id="sv-time" x="72" y="29" font-size="9" fill="rgba(255,255,255,.7)" font-family="sans-serif">--:--</text>
+  <text id="sv-icon" x="138" y="28" font-size="14" font-family="sans-serif">⛅</text>
+  <text id="sv-temp" x="158" y="21" font-size="11" font-weight="500" fill="white" font-family="sans-serif">--°C</text>
+  <text id="sv-desc" x="158" y="31" font-size="9" fill="rgba(255,255,255,.75)" font-family="sans-serif">--</text>
+  <text x="210" y="70" text-anchor="middle" font-size="18" font-weight="500" fill="white" font-family="sans-serif">2026 日本 Long Stay</text>
+  <!-- May 日期框 -->
+  <rect x="80" y="84" width="115" height="18" rx="9" fill="rgba(255,255,255,.18)"/>
+  <text x="137" y="97" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">May 3/30 ～ 4/9</text>
+  <!-- Vivian 日期框 -->
+  <rect x="213" y="84" width="130" height="18" rx="9" fill="rgba(255,255,255,.18)"/>
+  <text x="278" y="97" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Vivian 3/30 ～ 6/27</text>
+
+
+  <line x1="0" y1="55" x2="75" y2="28" stroke="#8B4F6B" stroke-width="2" opacity=".55"/>
+  <line x1="75" y1="28" x2="135" y2="10" stroke="#8B4F6B" stroke-width="1.5" opacity=".55"/>
+  <line x1="340" y1="65" x2="420" y2="38" stroke="#8B4F6B" stroke-width="2" opacity=".55"/>
+  
+  <circle cx="357" cy="8" r="5" fill="#FF8FAB" opacity=".88"/><circle cx="365" cy="15" r="5" fill="#FFB7CE" opacity=".88"/>
+  
+  <!-- May 日期框 -->
+  
+  
+  
+  <!-- Vivian 日期框 -->
+  
+  
+    <!-- 神社 + 櫻花（翻譯上方） -->
+  <g transform="translate(24,95)" opacity=".85">
+    <rect x="-12" y="0" width="24" height="2.5" rx="1" fill="white"/>
+    <rect x="-9" y="3.5" width="18" height="2" rx="1" fill="white"/>
+    <rect x="-7" y="6" width="2.5" height="13" rx="1.25" fill="white"/>
+    <rect x="4.5" y="6" width="2.5" height="13" rx="1.25" fill="white"/>
+    <rect x="-8" y="10" width="16" height="2" rx="1" fill="white" opacity=".7"/>
+  </g>
+  <circle cx="10" cy="96" r="3" fill="#FFB7CE" opacity=".88"/>
+  <circle cx="16" cy="91" r="2.5" fill="#FF8FAB" opacity=".83"/>
+  <circle cx="35" cy="93" r="2.5" fill="#FFB7CE" opacity=".83"/>
+  <circle cx="40" cy="98" r="3" fill="#FF8FAB" opacity=".85"/>
+  <!-- 翻譯入口 -->
+  <g style="cursor:pointer" onclick="goTr()">
+    <rect x="5" y="128" width="38" height="22" rx="8" fill="white" opacity=".95"/>
+    <polygon points="28,150 36,150 32,157" fill="white" opacity=".95"/>
+    <circle cx="15" cy="139" r="7" fill="none" stroke="#E8833A" stroke-width="1.5"/>
+    <ellipse cx="15" cy="139" rx="4" ry="7" fill="none" stroke="#E8833A" stroke-width="1"/>
+    <line x1="8" y1="139" x2="22" y2="139" stroke="#E8833A" stroke-width="1"/>
+    <line x1="9" y1="135" x2="21" y2="135" stroke="#E8833A" stroke-width=".8"/>
+    <line x1="9" y1="143" x2="21" y2="143" stroke="#E8833A" stroke-width=".8"/>
+    <text x="30" y="143" text-anchor="middle" font-size="9" font-weight="500" fill="#E8833A" font-family="sans-serif">翻譯</text>
+  </g>
+  <!-- 橘貓 -->
+  <ellipse cx="58" cy="152" rx="16" ry="15" fill="#E8833A"/>
+  <ellipse cx="58" cy="148" rx="13.5" ry="12.5" fill="#F0A060"/>
+  <polygon points="47,137 52,147 45,147" fill="#E8833A"/>
+  <polygon points="48,139 52,146 46,146" fill="#FFB899"/>
+  <polygon points="69,137 64,147 71,147" fill="#E8833A"/>
+  <polygon points="68,139 64,146 70,146" fill="#FFB899"/>
+  <path d="M52,143 Q55,141.5 58,143" stroke="#C86820" stroke-width=".9" fill="none" opacity=".6"/>
+  <path d="M58,143 Q61,141.5 64,143" stroke="#C86820" stroke-width=".9" fill="none" opacity=".6"/>
+  <ellipse cx="52" cy="148" rx="3" ry="2.5" fill="#4a9f4a"/><ellipse cx="52" cy="148" rx="1.5" ry="2.1" fill="#1a1a1a"/>
+  <ellipse cx="64" cy="148" rx="3" ry="2.5" fill="#4a9f4a"/><ellipse cx="64" cy="148" rx="1.5" ry="2.1" fill="#1a1a1a"/>
+  <circle cx="52.8" cy="147" r=".7" fill="white"/><circle cx="64.8" cy="147" r=".7" fill="white"/>
+  <ellipse cx="58" cy="151.5" rx="1.8" ry="1.2" fill="#E87090"/>
+  <path d="M55.5,154 Q58,156 60.5,154" stroke="#C86820" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+  <line x1="42" y1="150" x2="50" y2="150.5" stroke="white" stroke-width=".8" opacity=".8"/>
+  <line x1="42" y1="152.5" x2="50" y2="152" stroke="white" stroke-width=".8" opacity=".8"/>
+  <line x1="66" y1="150.5" x2="74" y2="150" stroke="white" stroke-width=".8" opacity=".8"/>
+  <line x1="66" y1="152" x2="74" y2="152.5" stroke="white" stroke-width=".8" opacity=".8"/>
+<!-- May -->
+  <ellipse cx="105" cy="131" rx="12" ry="14" fill="#8B5A2B"/><rect x="93" y="131" width="4" height="13" rx="2" fill="#8B5A2B"/><rect x="117" y="131" width="4" height="11" rx="2" fill="#8B5A2B"/>
+  <ellipse cx="105" cy="130" rx="11" ry="11" fill="#FDDBB4"/>
+  <ellipse cx="105" cy="121" rx="12" ry="6.5" fill="#8B5A2B"/><ellipse cx="95" cy="125" rx="3.2" ry="4.8" fill="#8B5A2B"/><ellipse cx="115" cy="125" rx="3.2" ry="4.8" fill="#8B5A2B"/>
+  <ellipse cx="101" cy="129" rx="2.1" ry="2.1" fill="#333"/><ellipse cx="110" cy="129" rx="2.1" ry="2.1" fill="#333"/>
+  <circle cx="101.7" cy="128.3" r=".75" fill="white"/><circle cx="110.7" cy="128.3" r=".75" fill="white"/>
+  <ellipse cx="96.5" cy="133" rx="2.8" ry="1.7" fill="#F8B4C0" opacity=".7"/><ellipse cx="113.5" cy="133" rx="2.8" ry="1.7" fill="#F8B4C0" opacity=".7"/>
+  <path d="M102 137 Q105.5 140 109 137" stroke="#c87" stroke-width="1" fill="#FFB7C5" opacity=".6" stroke-linecap="round"/>
+  <rect x="95" y="141" width="20" height="17" rx="4" fill="#FF8FAB"/>
+  <path d="M96 146 Q89 152 88 158" stroke="#FDDBB4" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="88" cy="159" rx="3.2" ry="2.8" fill="#FDDBB4"/>
+  <path d="M114 146 Q121 152 122 158" stroke="#FDDBB4" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="122" cy="159" rx="3.2" ry="2.8" fill="#FDDBB4"/>
+  <rect x="97" y="158" width="8" height="11" rx="3" fill="#FF8FAB"/><rect x="107" y="158" width="8" height="11" rx="3" fill="#FF8FAB"/>
+  <ellipse cx="101" cy="169" rx="4.5" ry="2.2" fill="white"/><ellipse cx="111" cy="169" rx="4.5" ry="2.2" fill="white"/>
+  <!-- Punch -->
+  <!-- doll -->
+  <ellipse cx="195" cy="154" rx="9" ry="9" fill="#8B5A2B"/><ellipse cx="195" cy="157" rx="6.5" ry="6" fill="#c8956c"/>
+  <ellipse cx="186.5" cy="154" rx="4.5" ry="4.5" fill="#8B5A2B"/><ellipse cx="186.5" cy="154" rx="3" ry="3" fill="#c8956c"/>
+  <ellipse cx="203.5" cy="154" rx="4.5" ry="4.5" fill="#8B5A2B"/><ellipse cx="203.5" cy="154" rx="3" ry="3" fill="#c8956c"/>
+  <line x1="191.5" y1="152" x2="194" y2="154.5" stroke="#3d2200" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="194" y1="152" x2="191.5" y2="154.5" stroke="#3d2200" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="196" y1="152" x2="198.5" y2="154.5" stroke="#3d2200" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="198.5" y1="152" x2="196" y2="154.5" stroke="#3d2200" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M191 159 Q195 162.5 199 159" stroke="#8a5848" stroke-width="1" fill="none" stroke-linecap="round" stroke-dasharray="2,1"/>
+  <ellipse cx="195" cy="167" rx="7" ry="7" fill="#8B5A2B"/><ellipse cx="195" cy="168" rx="4.5" ry="5" fill="#c8956c"/>
+  <!-- punch body -->
+  <ellipse cx="210" cy="160" rx="13" ry="12" fill="#3a3530"/><ellipse cx="210" cy="162" rx="8" ry="8" fill="#7a7570"/>
+  <ellipse cx="196" cy="143" rx="6" ry="6" fill="#3a3530"/><ellipse cx="196" cy="143" rx="4" ry="4" fill="#C09888"/>
+  <ellipse cx="224" cy="143" rx="6" ry="6" fill="#3a3530"/><ellipse cx="224" cy="143" rx="4" ry="4" fill="#C09888"/>
+  <ellipse cx="210" cy="139" rx="14" ry="13" fill="#3a3530"/>
+  <ellipse cx="210" cy="129" rx="13" ry="7" fill="#2a2520"/><circle cx="201" cy="131" r="3.5" fill="#2a2520"/><circle cx="219" cy="131" r="3.5" fill="#2a2520"/>
+  <ellipse cx="210" cy="142" rx="10" ry="9.5" fill="#D4A088"/>
+  <ellipse cx="204" cy="138" rx="3.8" ry="3.8" fill="#B09080"/><ellipse cx="216" cy="138" rx="3.8" ry="3.8" fill="#B09080"/>
+  <ellipse cx="204" cy="138" rx="2.7" ry="2.7" fill="#f5e8c0"/>
+  <ellipse cx="204" cy="137" rx="2.2" ry="2.5" fill="#1a0a00"/>
+  <circle cx="205" cy="135.5" r="1" fill="white"/><ellipse cx="216" cy="138" rx="2.7" ry="2.7" fill="#f5e8c0"/>
+  <ellipse cx="216" cy="137" rx="2.2" ry="2.5" fill="#1a0a00"/>
+  <circle cx="217" cy="135.5" r="1" fill="white"/>
+  <ellipse cx="210" cy="144" rx="2.8" ry="2" fill="#A87060"/>
+  <path d="M207 147 Q210 149.5 213 147" stroke="#8a5848" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="200" cy="144" rx="2.8" ry="1.6" fill="#e8917a" opacity=".55"/>
+  <ellipse cx="220" cy="144" rx="2.8" ry="1.6" fill="#e8917a" opacity=".55"/>
+  <path d="M196 154 Q188 158 186 165" stroke="#3a3530" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M224 154 Q232 158 233 165" stroke="#3a3530" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="203" cy="174" rx="5.5" ry="3.5" fill="#3a3530"/><ellipse cx="217" cy="174" rx="5.5" ry="3.5" fill="#3a3530"/>
+  <!-- Vivian -->
+  <rect x="298" y="126" width="5" height="37" rx="2.5" fill="#1a1a1a"/><rect x="321" y="126" width="5" height="31" rx="2.5" fill="#1a1a1a"/>
+  <ellipse cx="310" cy="132" rx="13" ry="16" fill="#1a1a1a"/>
+  <ellipse cx="310" cy="131" rx="11" ry="11" fill="#FDDBB4"/>
+  <ellipse cx="310" cy="122" rx="12" ry="6.5" fill="#1a1a1a"/><ellipse cx="300" cy="126" rx="3.2" ry="5" fill="#1a1a1a"/>
+  <path d="M300 120 Q310 115 320 121" fill="#1a1a1a"/>
+  <ellipse cx="306" cy="130" rx="2.1" ry="2.1" fill="#333"/><ellipse cx="315" cy="130" rx="2.1" ry="2.1" fill="#333"/>
+  <circle cx="306.7" cy="129.3" r=".75" fill="white"/><circle cx="315.7" cy="129.3" r=".75" fill="white"/>
+  <ellipse cx="301.5" cy="134" rx="2.8" ry="1.7" fill="#F8B4C0" opacity=".7"/><ellipse cx="318.5" cy="134" rx="2.8" ry="1.7" fill="#F8B4C0" opacity=".7"/>
+  <path d="M307 137 Q310.5 140 314 137" stroke="#c87" stroke-width="1" fill="#FFB7C5" opacity=".6" stroke-linecap="round"/>
+  <rect x="300" y="141" width="20" height="17" rx="4" fill="#f0f0f0"/>
+  <path d="M301 146 Q294 152 293 158" stroke="#FDDBB4" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="293" cy="159" rx="3.2" ry="2.8" fill="#FDDBB4"/>
+  <path d="M319 146 Q326 152 327 158" stroke="#FDDBB4" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="327" cy="159" rx="3.2" ry="2.8" fill="#FDDBB4"/>
+  <rect x="302" y="158" width="8" height="11" rx="3" fill="#e8e8e8"/><rect x="312" y="158" width="8" height="11" rx="3" fill="#e8e8e8"/>
+  <ellipse cx="306" cy="169" rx="4.5" ry="2.2" fill="#ccc"/><ellipse cx="316" cy="169" rx="4.5" ry="2.2" fill="#ccc"/>
+  <!-- 日本國旗 -->
+  <g transform="translate(360,62)">
+    <rect x="0" y="0" width="28" height="18" rx="2" fill="white" opacity=".95"/>
+    <circle cx="14" cy="9" r="5.5" fill="#BC002D"/>
+  </g>
+  <!-- 國旗旁櫻花 -->
+  <circle cx="355" cy="60" r="3.5" fill="#FFB7CE" opacity=".88"/>
+  <circle cx="364" cy="55" r="3" fill="#FF8FAB" opacity=".83"/>
+  <circle cx="400" cy="63" r="3" fill="#FFB7CE" opacity=".83"/>
+  <circle cx="407" cy="56" r="3.5" fill="#FF8FAB" opacity=".85"/>
+  <circle cx="402" cy="72" r="2.5" fill="#FFB7CE" opacity=".8"/>
+  <text x="168" y="154" font-size="11" fill="#FFB7CE" opacity=".9" font-family="sans-serif">♡</text>
+  <text x="248" y="152" font-size="11" fill="#FFB7CE" opacity=".85" font-family="sans-serif">♡</text>
+</svg>
+
+<!-- Tabs -->
+<div class="tabs" id="tabs">
+  <button class="tab on" onclick="go('pk',this)">行前準備</button>
+  <button class="tab" onclick="go('hs',this)">住宿&學校</button>
+  <button class="tab" onclick="go('it',this)">行程</button>
+  <button class="tab" onclick="go('sh',this)">購物</button>
+  <button class="tab" onclick="go('bk',this)">匯率&記帳</button>
+</div>
+
+<!-- ══ 行前準備 ══ -->
+<div id="pk" class="sec on">
+  <div class="pglbl" id="pglbl">已完成 0 / 39 項</div>
+  <div class="pgbar"><div class="pgfill" id="pgfill" style="width:0%"></div></div>
+
+  <div style="margin-bottom:14px;">
+    <div class="bag-t"><span>隨身行李</span><span class="bbadge bc">機上可帶</span></div>
+    <div class="ptitle">重要文件 & 支付</div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">護照（效期6個月以上）</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">電子機票（IT212 S8PJWJ / IT213 M4TVXF）</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">住宿預訂確認信</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">旅平險保單</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">信用卡（Visa/Master）</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">Suica（iPhone Wallet）</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">日幣現金</span></div>
+    <div class="ptitle">隨身小物</div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">臉用噴霧</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">人工淚液</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">護手霜</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">耳機</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">頸枕</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">行動電源</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">Notebook & 筆</span></div>
+    <div class="ptitle">票券</div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">KLOOK 一日遊確認信</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">澀谷 SHIBUYA SKY 門票</span></div>
+  </div>
+
+  <div style="margin-bottom:14px;">
+    <div class="bag-t"><span>托運行李</span><span class="bbadge bd">大行李箱</span></div>
+    <div class="ptitle">美妝保養</div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">臉用保養品</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">身體乳液</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">指甲剪</span></div>
+    <div class="ptitle">藥品</div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">感冒藥</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">過敏藥</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">贊安諾</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">腸胃藥</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">濕疹藥膏</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">OK 蹦</span></div>
+    <div class="ptitle">盥洗 & 衣物</div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">盥洗用品（牙刷・洗髮護髮旅行組・髮帶・髮夾）</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">免洗內褲</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">浴巾 & 棉被</span></div>
+    <div class="ptitle">3C & 其他</div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">充電器</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">eSIM 安裝確認</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">雨傘</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">眼鏡・隱形眼鏡・太陽眼鏡</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">隱形眼鏡藥水</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">水壺 & 提袋</span></div>
+    <div class="pi" onclick="ck(this)"><div class="pc"></div><span class="pl">購物袋</span></div>
+  </div>
+</div>
+
+<!-- ══ 住宿&學校 ══ -->
+<div id="hs" class="sec">
+  <div class="hcard">
+    <div class="hcard-sub">3/30–4/1 &amp; 4/4–4/9（May）· Vivian 至 6/27</div>
+    <div class="hcard-name">大阪住家</div>
+    <div class="hcard-info">Momodani, Ikuno Ward, Osaka</div>
+    <a class="ml" href="https://maps.google.com/?q=Momodani+Ikuno+Osaka" target="_blank">Google Maps ↗</a>
+  </div>
+  <div class="hcard">
+    <div class="hcard-sub">4/1（1晚）· check in 14:00</div>
+    <div class="hcard-name">橫濱站前里士滿飯店</div>
+    <div class="hcard-info">訂單 #1706838977</div>
+    <a class="ml" href="https://maps.google.com/?q=Richmond+Hotel+Yokohama-Ekimae" target="_blank">Google Maps ↗</a>
+  </div>
+  <div class="hcard">
+    <div class="hcard-sub">4/2–4/4（2晚）· check out 11:00</div>
+    <div class="hcard-name">MeguroHolic Hotel</div>
+    <div class="hcard-info">目黑站西口步行3分 · 訂單 #1706835838</div>
+    <a class="ml" href="https://maps.google.com/?q=MeguroHolic+Hotel+Tokyo" target="_blank">Google Maps ↗</a>
+  </div>
+  <div class="school-card">
+    <div style="font-size:11px;color:#888;margin-bottom:4px;"><span class="badge bv">Vivian</span> 入學 4/6 · 至 6/27</div>
+    <div style="font-size:17px;font-weight:500;margin-bottom:6px;">Human Academy Japanese Language School</div>
+    <div class="slogan">Study Hard &amp; Play Hard</div>
+    <div style="font-size:12px;margin-bottom:4px;">2-5-9 Kitakyuhojimachi, Chuo-ku, Osaka 542-0081</div>
+    <div style="font-size:12px;color:#0f6e56;margin-bottom:6px;">地鐵 御堂筋線「本町站」11號出口步行5分</div>
+    <div style="font-size:12px;color:#888;margin-bottom:10px;">上課至中午 9:15–12:30（週一至五）</div>
+    <a class="ml" href="https://maps.google.com/?q=Human+Academy+Japanese+Language+School+Osaka" target="_blank">Google Maps ↗</a>
+    <a class="ml" href="https://hajl.athuman.com/en/" target="_blank">官網 ↗</a>
+  </div>
+</div>
+
+<!-- ══ 行程 ══ -->
+<div id="it" class="sec">
+
+<!-- 3/30 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot tr2" style="flex-direction:column;line-height:1.2">3/30<div style="font-size:9px;opacity:.75;margin-top:1px">週一</div></div><div class="ct"><div class="cl">抵達大阪</div><div class="cs">台北 → 大阪</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="green">⏰ 報到時間 13:15（出發前2小時，T1 桃園）</div>
+  <div class="fc"><div class="fh"><span class="fn">IT 212 · 台灣虎航</span><span class="fs">確認碼 S8PJWJ</span></div><div class="fr"><div class="fa"><div class="fcode">TPE</div><div class="ft">15:15</div><div class="fl">T1 桃園</div></div><div class="fline"></div><div class="fa"><div class="fcode">KIX</div><div class="ft">19:00</div><div class="fl">T1 關西</div></div></div></div>
+  <div class="tt"><div class="th"><span>KIX → 天下茶屋（南海電鐵空港急行）</span><span class="tbadge">約40分 ¥970</span></div>
+    <div class="tg"><span>出發 KIX</span><span>抵達 天下茶屋</span><span style="text-align:right">種別</span></div>
+    <div class="tr3"><span>19:18</span><span style="font-size:11px;color:#888">→ 19:56</span><span style="text-align:right;font-size:11px;color:#888">空港急行</span></div>
+    <div class="tr3 trh"><span>19:48</span><span style="font-size:11px;color:#0f6e56">→ 20:26</span><span style="text-align:right;font-size:11px;color:#0f6e56">空港急行</span></div>
+    <div class="tr3 trh"><span>20:18</span><span style="font-size:11px;color:#0f6e56">→ 20:56</span><span style="text-align:right;font-size:11px;color:#0f6e56">空港急行</span></div>
+    <div class="tr3"><span>20:48</span><span style="font-size:11px;color:#888">→ 21:26</span><span style="text-align:right;font-size:11px;color:#888">空港急行</span></div>
+    <div class="tr3"><span>21:18</span><span style="font-size:11px;color:#888">→ 21:56</span><span style="text-align:right;font-size:11px;color:#888">空港急行</span></div>
+  </div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">大阪住家 check in</div><div class="is">地鐵 今里筋線「桃谷站」步行</div><a class="ml" href="https://maps.google.com/?q=Momodani+Ikuno+Osaka" target="_blank">Maps ↗</a></div></div></div>
+</div></div>
+
+<!-- 3/31 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot os" style="flex-direction:column;line-height:1.2">3/31<div style="font-size:9px;opacity:.75;margin-top:1px">週二</div></div><div class="ct"><div class="cl">大阪採買 + 景點</div><div class="cs">難波・天王寺・梅田</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="lbl">咖啡 & 美食</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">つじ田 心斎橋店</div><div class="ih">濃厚沾麵（つけ麺）</div><div class="is">地鐵「心齋橋站」步行3分</div><a class="ml" href="https://maps.google.com/?q=Tsujita+Shinsaibashi+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">丸福咖啡 千日前本店</div><div class="ih">大阪最老咖啡館，創業1934年</div><div class="is">地鐵「日本橋站」6號出口步行5分</div><a class="ml" href="https://maps.google.com/?q=Marufuku+Coffee+Sennichimae+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">大阪一蘭拉麵 難波御堂筋店</div><div class="ih">獨立隔間・天然豚骨</div><div class="is">地鐵「難波站」步行5分</div><a class="ml" href="https://maps.google.com/?q=Ichiran+Ramen+Namba+Midosuji+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">GLITCH Coffee 大阪</div><div class="ih">8:00–18:00</div><div class="is">地鐵「本町站」或「心齋橋站」</div><a class="ml" href="https://maps.google.com/?q=GLITCH+Coffee+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">Kakuozan Fruit Daifuku Benzaiten · 水果大福</div><div class="is">本町店：南本町，地鐵「本町站」步行即達</div><div class="is">梅田店：Herbis Plaza ENT 3F</div><a class="ml" href="https://maps.google.com/?q=Kakuozan+Fruit+Daifuku+Benzaiten+Honmachi+Osaka" target="_blank">本町 ↗</a><a class="ml" href="https://maps.google.com/?q=Herbis+Plaza+ENT+Osaka" target="_blank">梅田 ↗</a></div></div></div>
+  <div class="lbl">難波・心齋橋</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">固力果跑跑人看板</div><div class="ig">道頓堀地標，必拍夜景</div><div class="is">地鐵「難波站」步行5分，道頓堀橋邊</div><a class="ml" href="https://maps.google.com/?q=Glico+Running+Man+Dotonbori+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">難波・道頓堀・心齋橋・黑門市場</div><a class="ml" href="https://maps.google.com/?q=Dotonbori+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="lbl">天王寺</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">住吉大社・楠珺社</div><div class="ih">戀愛・學業・生意興隆祈福</div><div class="is">南海本線「住吉大社站」步行3分</div><div class="ig">楠珺社：每月1日・15日限定「初辰まいり」御守</div><a class="ml" href="https://maps.google.com/?q=Sumiyoshi+Taisha+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">通天閣・新世界</div><div class="is">地鐵「恵美須町站」1號出口步行3分</div><a class="ml" href="https://maps.google.com/?q=Tsutenkaku+Tower+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">阿倍野 HARUKAS 300 展望台</div><div class="is">JR 或地鐵「天王寺站」直結</div><a class="ml" href="https://maps.google.com/?q=Abeno+Harukas+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="lbl">梅田</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">梅田藍天大廈・HEP FIVE 摩天輪</div><div class="ig">傍晚夜景最美</div><a class="ml" href="https://maps.google.com/?q=Umeda+Sky+Building+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">天神橋筋商店街（日本最長，約2.6km）</div><a class="ml" href="https://maps.google.com/?q=Tenjinbashisuji+Shopping+Street+Osaka" target="_blank">Maps ↗</a></div></div></div>
+</div></div>
+
+<!-- 4/1 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot yk" style="flex-direction:column;line-height:1.2">4/1<div style="font-size:9px;opacity:.75;margin-top:1px">週三</div></div><div class="ct"><div class="cl">新幹線 → 鎌倉一日遊</div><div class="cs">大阪 → 鎌倉 → 橫濱</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="tt"><div class="th"><span>新大阪 → 新橫濱 · のぞみ</span><span class="tbadge">約¥13,540</span></div>
+    <div class="tg"><span>列車</span><span>出發 → 抵達</span><span style="text-align:right">時間</span></div>
+    <div class="tr3 trh"><span>のぞみ</span><span style="font-size:11px;color:#0f6e56">06:00 → 08:05</span><span style="text-align:right;font-size:11px;color:#0f6e56">2h05m</span></div>
+    <div class="tr3 trh"><span>のぞみ</span><span style="font-size:11px;color:#0f6e56">06:15 → 08:20</span><span style="text-align:right;font-size:11px;color:#0f6e56">2h05m</span></div>
+    <div class="tr3"><span>のぞみ</span><span style="font-size:11px;color:#888">06:30 → 08:36</span><span style="text-align:right;font-size:11px;color:#888">2h06m</span></div>
+    <div class="tr3"><span>のぞみ</span><span style="font-size:11px;color:#888">07:00 → 09:05</span><span style="text-align:right;font-size:11px;color:#888">2h05m</span></div>
+    <div class="tr3"><span>のぞみ</span><span style="font-size:11px;color:#888">07:30 → 09:36</span><span style="text-align:right;font-size:11px;color:#888">2h06m</span></div>
+    <div class="tr3"><span>のぞみ</span><span style="font-size:11px;color:#888">08:00 → 10:05</span><span style="text-align:right;font-size:11px;color:#888">2h05m</span></div>
+  </div>
+  <div class="amber">座位選左側 E席，可看富士山！🗻</div>
+  <div class="hr"><span style="font-size:14px;width:20px;flex-shrink:0">🏨</span><span class="hn">橫濱里士滿飯店 · check in 14:00 · #1706838977</span><a class="hlink" href="https://maps.google.com/?q=Richmond+Hotel+Yokohama-Ekimae" target="_blank">地圖 ↗</a></div>
+  <div class="lbl">鎌倉景點</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">小町通商店街</div><div class="ig">必吃：大佛燒・草莓冰淇淋・世界第一蘋果派</div><a class="ml" href="https://maps.google.com/?q=Komachi+Street+Kamakura" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">鎌倉大佛・長谷寺・錢洗弁財天</div><a class="ml" href="https://maps.google.com/?q=Kotoku-in+Great+Buddha+Kamakura" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">七里濱沙灘・鎌倉高校前平交道</div><div class="ig">灌籃高手 OP 聖地</div><a class="ml" href="https://maps.google.com/?q=Kamakurakoko-mae+Station+Enoden" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">湘南江之島</div><div class="ig">推薦：生吻仔魚丼</div><a class="ml" href="https://maps.google.com/?q=Enoshima+Island+Kanagawa" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">AFURI 阿夫利 橫濱店</div><div class="ih">11:00–22:00 · 推薦：柚子鹽ラーメン</div><a class="ml" href="https://maps.google.com/?q=AFURI+Yokohama" target="_blank">Maps ↗</a></div></div></div>
+</div></div>
+
+<!-- 4/2 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot tk" style="flex-direction:column;line-height:1.2">4/2<div style="font-size:9px;opacity:.75;margin-top:1px">週四</div></div><div class="ct"><div class="cl">東京</div><div class="cs">橫濱 → 銀座・六本木・目黑</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="green">🕚 11:00 橫濱飯店 check out</div>
+  <div class="hr"><span style="font-size:14px;width:20px;flex-shrink:0">🏨</span><span class="hn">MeguroHolic Hotel · 目黑站西口步行3分</span><a class="hlink" href="https://maps.google.com/?q=MeguroHolic+Hotel+Tokyo" target="_blank">地圖 ↗</a></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in"><span class="badge bv">Vivian</span>銀座逛街</div><a class="ml" href="https://maps.google.com/?q=Ginza+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in"><span class="badge bm">May</span>國立新美術館</div><div class="ih">10:00–18:00（週五至20:00）· 週二休</div><a class="ml" href="https://maps.google.com/?q=National+Art+Center+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">Bricolage Bread & Co.</div><div class="ih">週二–日 8:00–21:00</div><a class="ml" href="https://maps.google.com/?q=Bricolage+Bread+Co+Roppongi+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">Meguro River 目黑川點燈</div><div class="ih">17:00–20:00</div><a class="ml" href="https://maps.google.com/?q=Meguro+River+Nakameguro" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">星巴克臻選® 東京烘焙工坊</div><div class="ih">8:00–22:00</div><a class="ml" href="https://maps.google.com/?q=Starbucks+Reserve+Roastery+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">權八 西麻布（六本木）</div><div class="ih">18:00–翌3:00</div><a class="ml" href="https://maps.google.com/?q=Gonpachi+Nishi-Azabu+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+</div></div>
+
+<!-- 4/3 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot tk" style="flex-direction:column;line-height:1.2">4/3<div style="font-size:9px;opacity:.75;margin-top:1px">週五</div></div><div class="ct"><div class="cl">東京</div><div class="cs">市川動物園 + 澀谷</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="bg-gray"><div class="rt">MeguroHolic Hotel → 市川市動物園</div>
+    <div class="row"><div class="num">1</div><div>目黑站 → JR 山手線 → 秋葉原 → JR 総武線「本八幡站」（約40分）</div></div>
+    <div class="row"><div class="num">2</div><div><strong>北口</strong> 8號站牌搭京成巴士「本14」或「本15」→「駒形大神社」步行10分</div></div>
+  </div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic">
+    <div class="in">市川市動物園 <span style="font-size:12px;font-weight:500;color:#72243E">小胖奇パンチ（宮腰先生・鹿野先生）</span></div>
+    <div class="ih">9:30–16:30 · 週一休園 · 餵食 12:00 & 15:00</div>
+    <a class="ml" href="https://maps.google.com/?q=Ichikawa+City+Zoo+Chiba" target="_blank">Maps ↗</a>
+  </div></div></div>
+  <div class="lbl">晚餐選項</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">梅丘壽司美登利 澀谷店</div><a class="ml" href="https://maps.google.com/?q=Umegaoka+Sushi+No+Midori+Shibuya" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">串燒肉男 Meat Man 澀谷店</div><a class="ml" href="https://maps.google.com/?q=Meat+Man+Shibuya+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+</div></div>
+
+<!-- 4/4 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot tr2" style="flex-direction:column;line-height:1.2">4/4<div style="font-size:9px;opacity:.75;margin-top:1px">週六</div></div><div class="ct"><div class="cl">惠比壽 → 回大阪</div><div class="cs">東京 → 大阪</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in"><span class="badge bv">Vivian</span>早餐：繁邦（しげくに）</div><div class="ih">9:00–15:00 · 週一/二公休</div><a class="ml" href="https://maps.google.com/?q=Shigekuni+Ebisu+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+  <div class="green">🕚 11:00 MeguroHolic Hotel check out</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">午餐：叙々苑 恵比寿ガーデンプレイス店</div><div style="font-size:11px;color:#72243E;font-weight:500;margin-top:1px">12:30 預約</div><a class="ml" href="https://maps.google.com/?q=Jojoen+Ebisu+Garden+Place+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">澀谷 SHIBUYA SKY 展望台</div><div class="ih">10:00–22:30</div><a class="ml" href="https://maps.google.com/?q=SHIBUYA+SKY+Tokyo" target="_blank">Maps ↗</a></div></div></div>
+  <div class="tt"><div class="th"><span>東京 → 新大阪 · のぞみ</span><span class="tbadge">約¥14,720</span></div>
+    <div class="tg"><span>列車</span><span>出發 → 抵達</span><span style="text-align:right">時間</span></div>
+    <div class="tr3 trh"><span>のぞみ</span><span style="font-size:11px;color:#0f6e56">18:00 → 20:23</span><span style="text-align:right;font-size:11px;color:#0f6e56">2h23m</span></div>
+    <div class="tr3 trh"><span>のぞみ</span><span style="font-size:11px;color:#0f6e56">18:30 → 20:53</span><span style="text-align:right;font-size:11px;color:#0f6e56">2h23m</span></div>
+    <div class="tr3 trh"><span>のぞみ</span><span style="font-size:11px;color:#0f6e56">19:00 → 21:23</span><span style="text-align:right;font-size:11px;color:#0f6e56">2h23m</span></div>
+    <div class="tr3"><span>のぞみ</span><span style="font-size:11px;color:#888">19:30 → 21:53</span><span style="text-align:right;font-size:11px;color:#888">2h23m</span></div>
+    <div class="tr3"><span>のぞみ</span><span style="font-size:11px;color:#888">20:00 → 22:23</span><span style="text-align:right;font-size:11px;color:#888">2h23m</span></div>
+  </div>
+  <div class="amber">東京→大阪：選右側 D/E席 可看富士山 🗻</div>
+  <div class="hr"><span style="font-size:14px;width:20px;flex-shrink:0">🏠</span><span class="hn">大阪住家 check in</span><a class="hlink" href="https://maps.google.com/?q=Momodani+Ikuno+Osaka" target="_blank">Maps ↗</a></div>
+</div></div>
+
+<!-- 4/5 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot os" style="flex-direction:column;line-height:1.2">4/5<div style="font-size:9px;opacity:.75;margin-top:1px">週日</div></div><div class="ct"><div class="cl">京都一日遊</div><div class="cs">醍醐寺・伏見稻荷・十石舟・先斗町</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="tt"><div class="th"><span>大阪住家 → 醍醐寺</span><span class="tbadge">全程約65分</span></div>
+    <div class="tg"><span>桃谷出發</span><span>京橋換乘京阪</span><span style="text-align:right">醍醐到着</span></div>
+    <div class="tr3 trh"><span>07:45</span><span style="font-size:11px;color:#0f6e56">京橋 07:52</span><span style="text-align:right;font-size:11px;color:#0f6e56">09:00頃</span></div>
+    <div class="tr3 trh"><span>08:10</span><span style="font-size:11px;color:#0f6e56">京橋 08:17</span><span style="text-align:right;font-size:11px;color:#0f6e56">09:25頃</span></div>
+    <div class="tr3"><span>09:00</span><span style="font-size:11px;color:#888">京橋 09:07</span><span style="text-align:right;font-size:11px;color:#888">10:15頃</span></div>
+  </div>
+  <div class="bg-gray"><div class="rt">詳細換乘路線</div>
+    <div class="row"><div class="num">1</div><div>JR 大阪環狀線「桃谷站」→「京橋站」（約7分 ¥160）</div></div>
+    <div class="row"><div class="num">2</div><div>京阪本線「京橋站」→「中書島站」換宇治線→「六地藏站」（約35分 ¥470）<br><span style="font-size:10px;color:#E24B4A">⚠ 特急不停六地藏，需在中書島換宇治線</span></div></div>
+    <div class="row"><div class="num">3</div><div>京都地鐵東西線「六地藏站」→「醍醐站」（2站 約5分 ¥220）</div></div>
+    <div class="row"><div class="num">4</div><div>「醍醐站」2號出口步行10分 → 醍醐寺</div></div>
+  </div>
+  <div style="background:#FBEAF0;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:12px;color:#72243E;">✨ 京阪特急 Premium Car：第6號車廂設對號座，加¥500，建議事先購票</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">醍醐寺</div><div class="ih">9:00–17:00 · 世界文化遺產</div><a class="ml" href="https://maps.google.com/?q=Daigo-ji+Temple+Kyoto" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">伏見稻荷大社・千本鳥居</div><a class="ml" href="https://maps.google.com/?q=Fushimi+Inari+Taisha+Kyoto" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">伏見十石舟</div><div class="ih">10:00–16:30 · 週二休</div><a class="ml" href="https://maps.google.com/?q=Fushimi+Jukkoku-bune+Kyoto" target="_blank">Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">先斗町 晚餐</div><div class="ig">傍晚5點後燈籠亮起最美</div><a class="ml" href="https://maps.google.com/?q=Pontocho+Kyoto" target="_blank">Maps ↗</a></div></div></div>
+  <div class="bg-gray"><div class="rt">回程：先斗町 → 大阪住家</div>
+    <div class="row"><div class="num">1</div><div>京阪本線「祇園四條站」→「京橋站」（特急約23分）</div></div>
+    <div class="row"><div class="num">2</div><div>JR 大阪環狀線「京橋站」→「桃谷站」（約7分）→ 步行8分</div></div>
+  </div>
+</div></div>
+
+<!-- 4/6 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot os" style="flex-direction:column;line-height:1.2">4/6<div style="font-size:9px;opacity:.75;margin-top:1px">週一</div></div><div class="ct"><div class="cl">Vivian 開學・May 勝尾寺</div><div class="cs">Human Academy・箕面・勝尾寺</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="bg-blue">
+    <div style="font-size:11px;color:#0C447C;font-weight:500;margin-bottom:4px"><span class="badge bv">Vivian</span> 入學第一天</div>
+    <div style="font-size:12px;font-weight:500;color:#0C447C;margin-bottom:2px">Human Academy Japanese Language School</div>
+    <div style="font-size:11px;color:#185FA5;margin-bottom:4px">9:15–12:30 · 地鐵「本町站」11號出口步行5分</div>
+    <a class="ml" href="https://maps.google.com/?q=Human+Academy+Japanese+Language+School+Osaka" target="_blank">Google Maps ↗</a>
+  </div>
+  <div class="blue"><span class="badge bm">May</span> 今日行程：勝尾寺</div>
+  <div class="bg-gray"><div class="rt">大阪住家 → 勝尾寺</div>
+    <div class="row"><div class="num">1</div><div>「桃谷站」→ JR 大阪環狀線（往和歌山方向）→「大阪站」</div></div>
+    <div class="row"><div class="num">2</div><div>地鐵 御堂筋線「梅田站」→「箕面萱野站」（終點）</div></div>
+    <div class="row"><div class="num">3</div><div>阪急巴士・北摂津靈園線30・勝尾寺行 · <strong>8號站牌</strong> · 車程21分</div></div>
+  </div>
+  <div class="tt"><div class="th"><span>阪急巴士「箕面萱野 8號停」→「勝尾寺」· 平日</span></div>
+    <table class="bt"><tr><th>出發</th><th>抵達（勝尾寺）</th><th>備注</th></tr>
+    <tr class="bth"><td>09:00</td><td>09:21</td><td>建議搭</td></tr>
+    <tr><td>09:30</td><td>09:51</td><td></td></tr>
+    <tr class="bth"><td>10:00</td><td>10:21</td><td>建議搭</td></tr>
+    <tr><td>10:30–14:30</td><td>21分後</td><td>每30分一班</td></tr>
+    <tr class="bth"><td>15:00</td><td>15:21</td><td>最後一班</td></tr></table>
+  </div>
+  <div class="amber">最晚搭 15:00 班才趕得上 16:30 最後受理！建議搭 09:00 或 10:00</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">勝尾寺（勝運達摩祈福）</div><div class="ih">8:00–17:00（最後受理16:30）· 大人¥550</div><a class="ml" href="https://maps.google.com/?q=Katsuoji+Temple+Minoh+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="bg-gray"><div class="rt">回程：勝尾寺 → 大阪住家</div>
+    <div class="row"><div class="num">1</div><div>阪急巴士 → 箕面萱野站 → 地鐵 御堂筋線 → 淀屋橋站</div></div>
+    <div class="row"><div class="num">2</div><div>京阪本線「淀屋橋站」→「京橋站」→ JR 環狀線「桃谷站」→ 步行8分</div></div>
+  </div>
+</div></div>
+
+<!-- 4/7 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot os" style="flex-direction:column;line-height:1.2">4/7<div style="font-size:9px;opacity:.75;margin-top:1px">週二</div></div><div class="ct"><div class="cl">Vivian 上學・May 琵琶湖</div><div class="cs">Human Academy・琵琶湖・白鬚神社</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="bg-blue">
+    <div style="font-size:11px;color:#0C447C;font-weight:500;margin-bottom:2px"><span class="badge bv">Vivian</span> 上學日 · 9:15–12:30</div>
+    <a class="ml" href="https://maps.google.com/?q=Human+Academy+Japanese+Language+School+Osaka" target="_blank">Google Maps ↗</a>
+  </div>
+  <div class="blue"><span class="badge bm">May</span> 今日行程：琵琶湖一日遊</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">琵琶湖＆白鬚神社＆三千院＆滿月寺浮御堂一日遊</div><div class="ig">KLOOK 行程 · 集合地點依確認信為準</div><a class="ml" href="https://maps.google.com/?q=Lake+Biwa+Shiga" target="_blank">Maps ↗</a></div></div></div>
+  
+
+  <div class="lbl">🚌 KLOOK 琵琶湖一日遊</div>
+  <div class="bg-gray">
+    <div class="rt">大阪集合 → 大阪解散</div>
+    <div class="row"><div class="num">集</div><div><strong>難波（Namba）</strong>：約 07:30～08:00<br><span style="font-size:11px;color:#888">OCAT（大阪城市航空總站）前，詳細地點以出發前一天 Email 為準</span></div></div>
+    <div class="row"><div class="num">集</div><div><strong>梅田（Umeda）</strong>：約 08:00～08:30<br><span style="font-size:11px;color:#888">大阪駅前，詳細地點以出發前一天 Email 為準</span></div></div>
+  </div>
+  <div class="lbl">🗺️ 行程概覽</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">⛩️ 白鬚神社<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 09:30–10:15</span></div><div class="ih">琵琶湖中水上鳥居・「近江的嚴島神社」・祈求長壽姻緣</div></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🛕 三千院（2026/4 適用）<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 10:30–12:00</span></div><div class="ih">天台宗古寺・青苔庭園・童地藏像・春櫻盛開</div><a class="ml" href="https://maps.google.com/?q=Sanzenin+Temple+Kyoto" target="_blank">Google Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🍱 午餐（自費）<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 12:00–13:00</span></div><div class="ih">當地餐廳・近江牛或湖魚料理</div></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🛕 滿月寺浮御堂<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 13:30–14:30</span></div><div class="ih">近江八景・堅田落雁・湖面上的佛堂・¥300</div><a class="ml" href="https://maps.google.com/?q=Ukimido+Mangetsuji+Temple+Otsu" target="_blank">Google Maps ↗</a></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🏘️ La Collina 近江八幡<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 15:00–16:30</span></div><div class="ih">草屋根甜點王國・年輪蛋糕・バームクーヘン伴手禮</div><a class="ml" href="https://maps.google.com/?q=La+Collina+Omihachiman" target="_blank">Google Maps ↗</a></div></div></div>
+  <div class="bg-gray" style="margin-top:8px">
+    <div class="rt">回程抵達大阪</div>
+    <div class="row"><div class="num">止</div><div>梅田 約 19:00、難波 約 19:30<br><span style="font-size:11px;color:#888">⚠️ 出發前一天晚上 19:00–21:00 會收到確認 Email，請務必確認</span></div></div>
+  </div>
+  <div class="amber">📌 4/7 是 Vivian 上課日（9:15–12:30），May 獨自參加此行程</div>
+  <a class="ml" href="https://www.klook.com/zh-TW/activity/154056-lake-biwa-shirahige-shrine-sanzen-in-temple-and-mangetsu-dera-tem/" target="_blank" style="display:block;margin-top:6px">KLOOK 行程頁面 ↗</a>
+</div></div>
+
+
+<!-- 4/8 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot os" style="flex-direction:column;line-height:1.2">4/8<div style="font-size:9px;opacity:.75;margin-top:1px">週三</div></div><div class="ct"><div class="cl">May 大阪最後一日</div><div class="cs">大阪・Vivian 繼續 Long Stay</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="bg-blue"><div style="font-size:11px;color:#0C447C;font-weight:500"><span class="badge bv">Vivian</span> 繼續上學 · Long Stay 至 6/27</div></div>
+  <div class="blue"><span class="badge bm">May</span> 在大阪的最後一天</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">購物・補漏景點</div><div class="is">心齋橋・道頓堀・難波</div></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">行李整理・準備明天回台灣</div></div></div></div>
+</div></div>
+
+<!-- 4/9 -->
+<div class="card"><div class="ch" onclick="tog(this)"><div class="dot tr2" style="flex-direction:column;line-height:1.2">4/9<div style="font-size:9px;opacity:.75;margin-top:1px">週四</div></div><div class="ct"><div class="cl">May 回台灣</div><div class="cs">大阪 → 台北</div></div><span class="arr">▶</span></div>
+<div class="cb">
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in"><span class="badge bm">May</span> 上午整理行李</div></div></div></div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in"><span class="badge bb">May+Vivian</span> 午餐・心齋橋逛逛</div><a class="ml" href="https://maps.google.com/?q=Shinsaibashi+Station+Osaka" target="_blank">Maps ↗</a></div></div></div>
+  <div class="bg-gray"><div class="rt">最晚 15:00 出發：南海難波 → KIX</div>
+    <div class="row"><div class="num">1</div><div>地鐵「難波站」→ 步行5分 → 南海電鐵「南海難波站」</div></div>
+    <div class="row"><div class="num">2</div><div>特急ラピート 約34分 ¥1,450 · 或 空港急行 約45分 ¥970</div></div>
+    <div class="row"><div class="num">3</div><div>KIX T1 報到 · 建議最晚 17:50 前到機場</div></div>
+  </div>
+  <div class="fc"><div class="fh"><span class="fn">IT 213 · 台灣虎航</span><span class="fs">確認碼 M4TVXF</span></div><div class="fr"><div class="fa"><div class="fcode">KIX</div><div class="ft">19:50</div><div class="fl">T1 關西</div></div><div class="fline"></div><div class="fa"><div class="fcode">TPE</div><div class="ft">21:45</div><div class="fl">T1 桃園</div></div></div></div>
+  <div class="green"><span class="badge bv" style="margin-right:6px">Vivian</span>繼續在大阪 Long Stay 至 6/27，下次見！</div>
+</div></div>
+
+</div><!-- end 行程 -->
+
+<!-- ══ 購物 ══ -->
+<div id="sh" class="sec">
+  <!-- 藥妝保健 -->
+  <div class="card" style="margin-bottom:10px">
+    <div class="ch" onclick="tog(this)"><div class="dot os" style="font-size:10px">藥妝<br>保健</div><div class="ct"><div class="cl">藥妝・保健</div><div class="cs">藥妝店均有售</div></div><span class="arr">▶</span></div>
+    <div class="cb">
+      <div class="si"><span class="stag">藥妝</span>WAKAMOTO（若元錠）<div class="sn">幫阿鑾媽媽採購 · ドラッグストア均有售</div></div>
+      <div class="si"><span class="stag">藥妝</span>大正胃散<div class="sn">ドラッグストア均有售</div></div>
+      <div class="si"><span class="stag">藥妝</span>大正製藥 百保能ACE PRO<div class="sn">ドラッグストア（松本清・ウエルシア等）</div></div>
+      <div class="si"><span class="stag">藥妝</span>森下仁丹益生菌 晶球長益菌<div class="sn">ドラッグストア</div></div>
+      <div class="si"><span class="stag">藥妝</span>妙麗散 miya-bm<div class="sn">ドラッグストア（整腸藥）</div></div>
+    </div>
+  </div>
+  <!-- 彩妝保養 -->
+  <div class="card" style="margin-bottom:10px">
+    <div class="ch" onclick="tog(this)"><div class="dot tk" style="font-size:10px">彩妝<br>保養</div><div class="ct"><div class="cl">彩妝・保養</div><div class="cs">百貨・藥妝</div></div><span class="arr">▶</span></div>
+    <div class="cb">
+      <div class="si"><span class="stag">彩妝</span>Clé de Peau Beauté 光采無瑕妝前凝霜<div class="sn">肌膚之鑰 CPB · 百貨公司專櫃</div></div>
+      <div class="si"><span class="stag">彩妝</span>SUQQU 粉底液 105<div class="sn">百貨公司 SUQQU 專櫃</div></div>
+      <div class="si"><span class="stag">彩妝</span>資生堂 SHISEIDO 海綿粉撲 119<div class="sn">百貨公司資生堂專櫃 / 藥妝店</div></div>
+      <div class="si"><span class="stag">日用品</span>無印良品 黑牙線<div class="sn">MUJI 各店均有售（フロス）</div></div>
+    </div>
+  </div>
+  <!-- 食品伴手禮 -->
+  <div class="card" style="margin-bottom:10px">
+    <div class="ch" onclick="tog(this)"><div class="dot yk" style="font-size:10px">食品<br>伴手禮</div><div class="ct"><div class="cl">食品・伴手禮</div><div class="cs">超市・デパ地下</div></div><span class="arr">▶</span></div>
+    <div class="cb">
+      <div class="si"><span class="stag">食品</span>日本明太子醬<div class="sn">超市・デパ地下 均有售</div></div>
+      <div class="si"><span class="stag">食品</span>伊藤久右衛門 宇治抹茶草莓巧克力<div class="sn">京都伊藤久右衛門門市 / 機場免稅店</div></div>
+      <div class="si"><span class="stag">食品</span>阿夫利拉麵（AFURI）<div class="sn">AFURI 店內伴手禮 · 機場免稅店亦有售</div></div>
+      <div class="si"><span class="stag">伴手禮</span>日本獅子舞玩偶<div class="sn">大丸百貨 宛玲表妹推薦花店入手</div></div>
+    </div>
+  </div>
+  <!-- 生活雜貨・家電 -->
+  <div class="card" style="margin-bottom:10px">
+    <div class="ch" onclick="tog(this)"><div class="dot tr2" style="font-size:10px">雜貨<br>家電</div><div class="ct"><div class="cl">雜貨・家電</div><div class="cs">家電量販・3COINS</div></div><span class="arr">▶</span></div>
+    <div class="cb">
+      <div class="si"><span class="stag">3COINS</span>智慧藍牙音訊太陽眼鏡<div class="sn">3COINS 各店（數量有限，建議早去）</div></div>
+      <div class="si"><span class="stag">家電</span>recolte 無線萬用調理機<div class="sn">大阪家電量販店</div></div>
+      <div class="si"><span class="stag">攝影</span>日本即可拍 富士FUJIFILM Simple Ace（ルンです）<div class="sn">各大藥妝・家電量販店・便利商店均有售</div></div>
+    </div>
+  </div>
+  <!-- 優惠券 -->
+  <div class="card" style="margin-bottom:10px">
+    <div class="ch" onclick="tog(this)"><div class="dot os" style="font-size:10px">優惠<br>折扣</div><div class="ct"><div class="cl">優惠券・折扣</div><div class="cs">出發前先存好</div></div><span class="arr">▶</span></div>
+    <div class="cb">
+      <div class="si"><span class="stag">優惠券</span>各大品牌折價券<div class="sn"><a href="https://www.funtime.com.tw/blog/funtime/japan-coupon" target="_blank" style="color:#185FA5;font-size:11px;">funtime 日本優惠券 ↗</a></div></div>
+    </div>
+  </div>
+  <!-- 勝尾寺必買 -->
+  <div class="card" style="margin-bottom:10px">
+    <div class="ch" onclick="tog(this)"><div class="dot os" style="font-size:9px">勝尾寺<br>必買</div><div class="ct"><div class="cl">勝尾寺購物亮點</div><div class="cs">4/6 參拜時採購</div></div><span class="arr">▶</span></div>
+    <div class="cb">
+      <div class="green">本堂對面紅屋子販售御守與達摩不倒翁</div>
+      <div class="si"><span class="stag">御守</span>強力達摩吊飾<div class="sn">眼睛可活動，代表強運</div></div>
+      <div class="si"><span class="stag">御守</span>達摩籤詩・勝尾寺御守<div class="sn">健康・學業・職運・交通安全等多種</div></div>
+      <div class="si"><span class="stag">伴手禮</span>達摩伴手禮<div class="sn">「勝」達摩硬糖、年輪蛋糕、達摩造型罐頭</div></div>
+      <div style="background:#E1F5EE;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#085041">一定要買小達摩，在「達摩牆」前拍照，寫下心願後點上兩眼！</div>
+    </div>
+  </div>
+</div>
+<div id="bk" class="sec">
+  <div class="bk-note" id="bk-note"></div>
+  <div class="bk-form" style="margin-bottom:14px">
+    <div class="bk-ft">💱 匯率換算 <span id="rate-updated" style="font-size:10px;color:#aaa"></span></div>
+    <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center">
+      <input id="rate-input" class="bk-inp" type="number" placeholder="輸入金額" style="flex:1"/>
+      <select id="rate-from" class="bk-sel">
+        <option value="TWD">NT$ 台幣</option>
+        <option value="JPY">¥ 日幣</option>
+        <option value="USD">$ 美元</option>
+        <option value="KRW">₩ 韓元</option>
+      </select>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+      <div class="bk-c"><div class="bk-cl">NT$ 台幣</div><div class="bk-cv tot" id="r-twd">—</div></div>
+      <div class="bk-c"><div class="bk-cl">¥ 日幣</div><div class="bk-cv may" id="r-jpy">—</div></div>
+      <div class="bk-c"><div class="bk-cl">$ 美元</div><div class="bk-cv viv" id="r-usd">—</div></div>
+      <div class="bk-c"><div class="bk-cl">₩ 韓元</div><div class="bk-cv shr" id="r-krw">—</div></div>
+    </div>
+    <div style="font-size:10px;color:#aaa;margin-bottom:6px">📊 今日參考匯率</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">1 美元</div><div style="font-weight:500;color:#1a3a5c" id="ref-usd">--</div></div>
+      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">100 日幣</div><div style="font-weight:500;color:#72243E" id="ref-jpy">--</div></div>
+      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">1000 韓元</div><div style="font-weight:500;color:#27500A" id="ref-krw">--</div></div>
+    </div>
+    <div style="font-size:10px;color:#aaa;margin-top:6px;text-align:right" id="rate-time"></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+    <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(0,0,0,.15))"></div>
+    <div style="font-size:11px;color:#aaa;white-space:nowrap">💰 支出記帳</div>
+    <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,rgba(0,0,0,.15))"></div>
+  </div>
+  
+  <div class="bk-sum">
+    <div class="bk-c"><div class="bk-cl">May 總計</div><div class="bk-cv may" id="bk-may">NT$ 0</div></div>
+    <div class="bk-c"><div class="bk-cl">Vivian 總計</div><div class="bk-cv viv" id="bk-viv">NT$ 0</div></div>
+    <div class="bk-c"><div class="bk-cl">合計支出</div><div class="bk-cv tot" id="bk-tot">NT$ 0</div></div>
+    <div class="bk-c"><div class="bk-cl">共同費用</div><div class="bk-cv shr" id="bk-shr">NT$ 0</div></div>
+  </div>
+  <div class="bk-form">
+    <div class="bk-ft">+ 新增記帳 <span id="bk-status" style="font-size:11px;font-weight:400;color:#888"></span></div>
+    <div class="bk-row"><input class="bk-inp" id="bk-desc" placeholder="項目描述（如：大阪一蘭拉麵）"/></div>
+    <div class="bk-row">
+      <input class="bk-inp" id="bk-amt" type="number" placeholder="金額" min="0" style="max-width:130px"/>
+      <select class="bk-sel" id="bk-cur"><option value="TWD">NT$ 台幣</option><option value="JPY">¥ 日幣</option></select>
+    </div>
+    <div class="ratenote" id="bk-rate-hint">¥1 ≈ NT$ 0.21 <button onclick="adjRate()" style="background:none;border:none;color:#185FA5;font-size:10px;cursor:pointer;margin-left:4px">調整匯率</button></div>
+    <div class="bk-row">
+      <input class="bk-inp" id="bk-date" type="date" style="max-width:150px"/>
+      <select class="bk-sel" id="bk-payer"><option value="may">May 付</option><option value="viv">Vivian 付</option><option value="share">共同</option></select>
+      <select class="bk-sel" id="bk-cat"><option value="餐飲">🍜 餐飲</option><option value="交通">🚄 交通</option><option value="住宿">🏨 住宿</option><option value="購物">🛍 購物</option><option value="景點">🎡 景點</option><option value="其他">📦 其他</option></select>
+    </div>
+    <button class="bk-btn" onclick="bkAdd()">記帳 ＋</button>
+  </div>
+  <div class="bk-filters">
+    <button class="bk-fb on" onclick="bkFil('all',this)">全部</button>
+    <button class="bk-fb" onclick="bkFil('may',this)">May</button>
+    <button class="bk-fb" onclick="bkFil('viv',this)">Vivian</button>
+    <button class="bk-fb" onclick="bkFil('share',this)">共同</button>
+  </div>
+  <div class="bk-wrap">
+    <div class="bk-head"><span>項目</span><span>日期</span><span style="text-align:right">金額(NT$)</span><span></span></div>
+    <div id="bk-list"></div>
+  </div>
+  <button class="bk-clr" onclick="bkClear()">清除所有記帳資料</button>
+</div>
+
+<!-- ══ 翻譯 ══ -->
+<div id="tr" class="sec">
+  <div style="margin-bottom:14px">
+    <input id="tr-inp" class="bk-inp" placeholder="輸入中文、英文、日文或韓文…" style="width:100%;margin-bottom:8px;font-size:14px;padding:11px 14px" onkeydown="if(event.key==='Enter')trGo()"/>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+      <button class="bk-fb on" id="tr-zh" onclick="_trLang='zh-TW';setTrBtn(this)">→ 中文</button>
+      <button class="bk-fb" id="tr-en" onclick="_trLang='en';setTrBtn(this)">→ 英文</button>
+      <button class="bk-fb" id="tr-ja" onclick="_trLang='ja';setTrBtn(this)">→ 日文</button>
+      <button class="bk-fb" id="tr-ko" onclick="_trLang='ko';setTrBtn(this)">→ 韓文</button>
+    </div>
+    <button class="bk-btn" onclick="trGo()">翻譯 ↗</button>
+    <div id="tr-res" style="display:none;background:#f9f8f6;border-radius:8px;padding:14px;margin-top:8px;font-size:15px;line-height:1.7"></div>
+    <div id="tr-speak-wrap" style="display:none;text-align:right;margin-top:4px">
+      <button class="tr-btn" id="tr-speak" onclick="spkResult()">🔊 播放</button>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:10px">
+    <div class="ch" onclick="tog(this)"><div class="dot os" style="font-size:10px">常用<br>短句</div><div class="ct"><div class="cl">旅遊必備短句</div><div class="cs">中・英・日・韓</div></div><span class="arr">▶</span></div>
+    <div class="cb" id="tr-phrases"></div>
+  </div>
+  <div class="card" style="margin-bottom:10px">
+    <div class="ch" onclick="tog(this)"><div class="dot tk" style="font-size:10px">緊急<br>用語</div><div class="ct"><div class="cl">緊急情況用語</div><div class="cs">中・英・日・韓</div></div><span class="arr">▶</span></div>
+    <div class="cb" id="tr-emg"></div>
+  </div>
+</div>
+
+</div><!-- end .app -->
+
+<script>
+// ── Welcome ──
+var wpw=document.getElementById('wpw');
+var wbtn=document.getElementById('wbtn');
+function chkPw(){
+  if(wpw.value==='0615'){
+    var w=document.getElementById('welcome');
+    w.classList.add('out');
+    document.body.style.overflow='';
+    setTimeout(function(){w.style.display='none';},500);
+  } else {
+    document.getElementById('werr').textContent='密碼錯誤 🙅';
+    wpw.value='';
+    setTimeout(function(){document.getElementById('werr').textContent='';},2500);
+  }
+}
+wpw.addEventListener('keydown',function(e){if(e.key==='Enter')chkPw();});
+wbtn.addEventListener('click',chkPw);
+wpw.focus();
+document.body.style.overflow='hidden';
+
+// ── Tabs ──
+function go(id,btn){
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+  if(id==='bk')bkInit();
+  if(id==='tr'){buildPhrases();buildEmg();}
+}
+function goTr(){
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+  document.getElementById('tr').classList.add('on');
+  buildPhrases();buildEmg();
+}
+
+// ── Card toggle ──
+function tog(el){
+  var b=el.nextElementSibling,a=el.querySelector('.arr');
+  b.classList.toggle('on');a.classList.toggle('on');
+}
+
+// ── Packing ──
+function ck(item){
+  var c=item.querySelector('.pc'),l=item.querySelector('.pl');
+  c.classList.toggle('ck');l.classList.toggle('dn');
+  var t=document.querySelectorAll('.pi').length,d=document.querySelectorAll('.pc.ck').length;
+  document.getElementById('pgfill').style.width=Math.round(d/t*100)+'%';
+  document.getElementById('pglbl').textContent='已完成 '+d+' / '+t+' 項';
+}
+
+// ── Budget ──
+// ── Safe Storage ──
+var _ls={
+  get:function(k,def){try{return localStorage.getItem(k)||def;}catch(e){return def;}},
+  set:function(k,v){try{localStorage.setItem(k,v);}catch(e){}},
+};
+var API='$2a$10$U6EXCNvzb5QrlQ/zoAFYMevCN/KzqGl3vcRAA8U5eO7O27TrgLnS.';
+var SHARED_ID='69b84b18c3097a1dd52eb1a2';
+var BIN_ID=_ls.get('jp26_bin','');
+var BK_RATE=parseFloat(_ls.get('jp26_rate','0.21'));
+var BK_FIL='all';
+function bkSt(msg,c){var e=document.getElementById('bk-status');if(e){e.textContent=msg;e.style.color=c||'#888';}}
+async function bkInit(){
+  bkSt('連線中…','#185FA5');
+  if(SHARED_ID){BIN_ID=SHARED_ID;_ls.set('jp26_bin',BIN_ID);}
+  if(BIN_ID){await bkLoad();return;}
+  try{
+    var r=await fetch('https://api.jsonbin.io/v3/b',{method:'POST',headers:{'Content-Type':'application/json','X-Master-Key':API,'X-Bin-Name':'japan2026-budget','X-Bin-Private':'false'},body:JSON.stringify({records:[]})});
+    var d=await r.json();BIN_ID=d.metadata.id;_ls.set('jp26_bin',BIN_ID);
+    bkRender([]);bkSt('✓ 已建立','#0f6e56');
+  }catch(e){bkSt('離線','#888');bkRender(JSON.parse(_ls.get('jp26_local','[]')));}
+}
+async function bkLoad(){
+  try{
+    var r=await fetch('https://api.jsonbin.io/v3/b/'+BIN_ID+'/latest',{headers:{'X-Master-Key':API}});
+    var d=await r.json();var recs=d.record.records||[];
+    bkSt('✓ '+new Date().toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'}),'#0f6e56');
+    bkRender(recs);return recs;
+  }catch(e){bkSt('離線','#888');return JSON.parse(_ls.get('jp26_local','[]'));}
+}
+async function bkSave(recs){
+  if(!BIN_ID){bkRender(recs);return;}
+  bkSt('儲存中…','#185FA5');
+  try{
+    await fetch('https://api.jsonbin.io/v3/b/'+BIN_ID,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':API},body:JSON.stringify({records:recs})});
+    bkSt('✓ 已儲存','#0f6e56');bkRender(recs);
+  }catch(e){bkSt('儲存失敗','#E24B4A');}
+}
+function toTWD(a,c){return c==='JPY'?Math.round(a*BK_RATE):Math.round(a);}
+async function bkAdd(){
+  var desc=document.getElementById('bk-desc').value.trim();
+  var amt=parseFloat(document.getElementById('bk-amt').value);
+  var cur=document.getElementById('bk-cur').value;
+  var date=document.getElementById('bk-date').value;
+  var payer=document.getElementById('bk-payer').value;
+  var cat=document.getElementById('bk-cat').value;
+  if(!desc){alert('請填寫項目');return;}
+  if(!amt||amt<=0){alert('請填寫金額');return;}
+  var recs=await bkLoad();
+  recs.unshift({id:Date.now(),desc:desc,amt:amt,cur:cur,twd:toTWD(amt,cur),date:date,payer:payer,cat:cat});
+  await bkSave(recs);
+  document.getElementById('bk-desc').value='';
+  document.getElementById('bk-amt').value='';
+}
+async function bkDel(id){
+  if(!confirm('確認刪除？'))return;
+  var recs=await bkLoad();
+  await bkSave(recs.filter(function(d){return d.id!==id;}));
+}
+async function bkClear(){
+  if(!confirm('確認清除所有記帳？'))return;
+  await bkSave([]);
+}
+function bkFil(mode,btn){
+  BK_FIL=mode;
+  document.querySelectorAll('.bk-fb').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');bkLoad();
+}
+function adjRate(){
+  var r=prompt('匯率（目前：'+BK_RATE+'）',''+BK_RATE);
+  if(r&&!isNaN(parseFloat(r))){BK_RATE=parseFloat(r);_ls.set('jp26_rate',BK_RATE);bkLoad();}
+}
+function bkRender(data){
+  if(!data)data=[];
+  // 先按日期由新到舊排序
+  data.sort(function(a,b){
+    var da=a.date||'',db=b.date||'';
+    if(da>db)return -1;if(da<db)return 1;
+    return b.id-a.id;
+  });
+  var fil=data.filter(function(d){
+    if(BK_FIL==='all')return true;
+    if(['may','viv','share'].includes(BK_FIL))return d.payer===BK_FIL;
+    return d.cat===BK_FIL;
+  });
+  var list=document.getElementById('bk-list');if(!list)return;
+  if(fil.length===0){list.innerHTML='<div class="bk-empty">尚無記帳資料 🌸</div>';}
+  else{
+    // 依月份分組
+    var groups={};
+    fil.forEach(function(d){
+      var key=d.date?d.date.substring(0,7):'無日期';
+      if(!groups[key])groups[key]=[];
+      groups[key].push(d);
+    });
+    // 月份由新到舊
+    var months=Object.keys(groups).sort(function(a,b){return a>b?-1:1;});
+    var html='';
+    months.forEach(function(month){
+      var label=month==='無日期'?'無日期':month.replace('-','年')+'月';
+      // 計算該月小計
+      var mTotal=0;
+      groups[month].forEach(function(d){mTotal+=d.twd||0;});
+      html+='<div style="display:flex;align-items:center;gap:8px;margin:10px 0 6px">';
+      html+='<div style="font-size:11px;font-weight:600;color:#1a3a5c;white-space:nowrap">📅 '+label+'</div>';
+      html+='<div style="flex:1;height:1px;background:rgba(0,0,0,.1)"></div>';
+      html+='<div style="font-size:10px;color:#888">NT$ '+mTotal.toLocaleString()+'</div>';
+      html+='</div>';
+      groups[month].forEach(function(d){
+        var lbl=d.payer==='may'?'May':d.payer==='viv'?'Vivian':'共同';
+        var amt=d.cur==='JPY'?'¥'+Number(d.amt).toLocaleString()+' (NT$'+Number(d.twd).toLocaleString()+')':'NT$'+Number(d.twd).toLocaleString();
+        html+='<div class="bk-row2"><div><div class="bk-desc">'+d.cat+' '+d.desc+'</div><span class="bk-tag '+d.payer+'">'+lbl+'</span></div><div class="bk-date">'+(d.date||'--')+'</div><div class="bk-amt '+d.payer+'">'+amt+'</div><button class="bk-del" onclick="bkDel('+d.id+')" title="刪除">🗑</button></div>';
+      });
+    });
+    list.innerHTML=html;
+  }
+  var may=0,viv=0,shr=0;
+  data.forEach(function(d){
+    if(d.payer==='may')may+=d.twd;
+    else if(d.payer==='viv')viv+=d.twd;
+    else shr+=d.twd;
+  });
+  document.getElementById('bk-may').textContent='NT$ '+may.toLocaleString();
+  document.getElementById('bk-viv').textContent='NT$ '+viv.toLocaleString();
+  document.getElementById('bk-tot').textContent='NT$ '+(may+viv+shr).toLocaleString();
+  document.getElementById('bk-shr').textContent='NT$ '+shr.toLocaleString();
+}
+(function(){var d=document.getElementById('bk-date');if(d)d.value=new Date().toISOString().split('T')[0];})();
+
+// ── Translation ──
+var _trLang='zh-TW';
+var PHRASES=[
+  {zh:'謝謝',en:'Thank you',ja:'ありがとうございます',ko:'감사합니다'},
+  {zh:'不好意思，請問…',en:'Excuse me...',ja:'すみません…',ko:'저기요…'},
+  {zh:'這個多少錢？',en:'How much is this?',ja:'これはいくらですか？',ko:'이거 얼마예요?'},
+  {zh:'請給我這個',en:"I'll take this one.",ja:'これをください',ko:'이것 주세요'},
+  {zh:'可以試穿嗎？',en:'Can I try this on?',ja:'試着できますか？',ko:'입어봐도 돼요?'},
+  {zh:'可以刷卡嗎？',en:'Can I pay by card?',ja:'カードで払えますか？',ko:'카드 되나요?'},
+  {zh:'太貴了',en:'Too expensive.',ja:'高すぎます',ko:'너무 비싸요'},
+  {zh:'廁所在哪裡？',en:'Where is the restroom?',ja:'トイレはどこですか？',ko:'화장실이 어디예요?'},
+  {zh:'車站在哪裡？',en:'Where is the station?',ja:'駅はどこですか？',ko:'역이 어디예요?'},
+  {zh:'我想去這裡',en:'I want to go here.',ja:'ここに行きたいです',ko:'여기 가고 싶어요'},
+  {zh:'菜單給我看',en:'May I see the menu?',ja:'メニューを見せてください',ko:'메뉴 보여주세요'},
+  {zh:'不辣',en:'No spicy, please.',ja:'辛くしないでください',ko:'안 맵게 해주세요'},
+  {zh:'好吃！',en:'Delicious!',ja:'美味しい！',ko:'맛있어요!'},
+  {zh:'打包帶走',en:'To go, please.',ja:'持ち帰りで',ko:'포장해 주세요'},
+  {zh:'有素食嗎？',en:'Do you have vegetarian?',ja:'ベジタリアン料理は？',ko:'채식 메뉴 있나요?'},
+  {zh:'再一杯',en:'One more, please.',ja:'もう一杯ください',ko:'한 잔 더 주세요'},
+  {zh:'幾點開門？',en:'What time do you open?',ja:'何時に開きますか？',ko:'몇 시에 열어요?'},
+  {zh:'我迷路了',en:"I'm lost.",ja:'道に迷いました',ko:'길을 잃었어요'},
+];
+var EMGS=[
+  {zh:'救命！',en:'Help!',ja:'助けてください！',ko:'도와주세요!'},
+  {zh:'請叫救護車',en:'Please call an ambulance.',ja:'救急車を呼んでください',ko:'구급차 불러주세요'},
+  {zh:'我需要看醫生',en:'I need to see a doctor.',ja:'医者が必要です',ko:'의사가 필요해요'},
+  {zh:'我的東西被偷了',en:'My belongings were stolen.',ja:'荷物を盗まれました',ko:'물건을 도둑맞았어요'},
+  {zh:'我對___過敏',en:"I'm allergic to ___.",ja:'___アレルギーがあります',ko:'___알레르기가 있어요'},
+  {zh:'台灣代表處',en:'TECO Japan: +81-3-3280-7811',ja:'台湾窓口：+81-3-3280-7811',ko:'대만 대표처：+81-3-3280-7811'},
+];
+function mkRow(p,isEmg){
+  var color=isEmg?'#E24B4A':'inherit';
+  var row='<div class="item"><div style="padding:4px 0">';
+  row+='<div style="font-size:13px;font-weight:500;color:'+color+';margin-bottom:4px">'+p.zh+'</div>';
+  row+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">';
+  row+='<div style="font-size:11px"><span style="color:#aaa;font-size:10px">EN</span> '+p.en+' <button class="tr-btn spkbtn" data-t="'+p.en.replace(/"/g,'&quot;')+'" data-l="en-US">🔊</button></div>';
+  row+='<div style="font-size:11px"><span style="color:#aaa;font-size:10px">JA</span> '+p.ja+' <button class="tr-btn spkbtn" data-t="'+p.ja.replace(/"/g,'&quot;')+'" data-l="ja-JP">🔊</button></div>';
+  row+='<div style="font-size:11px"><span style="color:#aaa;font-size:10px">KO</span> '+p.ko+' <button class="tr-btn spkbtn" data-t="'+p.ko.replace(/"/g,'&quot;')+'" data-l="ko-KR">🔊</button></div>';
+  row+='</div></div></div>';
+  return row;
+}
+function buildPhrases(){
+  var p=document.getElementById('tr-phrases');
+  if(p&&!p.innerHTML)p.innerHTML=PHRASES.map(function(x){return mkRow(x,false);}).join('');
+}
+function buildEmg(){
+  var e=document.getElementById('tr-emg');
+  if(e&&!e.innerHTML)e.innerHTML=EMGS.map(function(x){return mkRow(x,true);}).join('');
+}
+function setTrBtn(btn){
+  document.querySelectorAll('#tr-zh,#tr-en,#tr-ja,#tr-ko').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+}
+function trGo(){
+  var text=document.getElementById('tr-inp').value.trim();
+  if(!text){alert('請輸入要翻譯的文字');return;}
+  var res=document.getElementById('tr-res');
+  res.style.display='block';res.innerHTML='<span style="color:#aaa">翻譯中…</span>';
+  var langMap={'zh-TW':'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'};
+  var tl=langMap[_trLang]||'ja-JP';
+  var label={'zh-TW':'繁體中文',en:'English',ja:'日本語',ko:'한국어'}[_trLang]||'繁體中文';
+  // 先用 Google gtx，失敗再用 MyMemory
+  var url1='https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh-TW&tl='+_trLang+'&dt=t&q='+encodeURIComponent(text);
+  var url2='https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair=zh-TW|'+tl;
+  fetch(url1)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var result=d[0].map(function(x){return x[0];}).join('');
+      res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
+      document.getElementById('tr-speak-wrap').style.display='block';
+    })
+    .catch(function(){
+      // fallback MyMemory
+      fetch(url2)
+        .then(function(r){return r.json();})
+        .then(function(d){
+          var result=d.responseData&&d.responseData.translatedText||'';
+          res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
+          document.getElementById('tr-speak-wrap').style.display='block';
+        })
+        .catch(function(){res.innerHTML='<span style="color:#E24B4A">翻譯失敗，請確認網路連線</span>';});
+    });
+}
+
+// ── Speech ──
+var _spk=null,_voices=[];
+function _lv(){_voices=window.speechSynthesis.getVoices();}
+if(window.speechSynthesis){_lv();window.speechSynthesis.onvoiceschanged=function(){_lv();};}
+function speakText(text,lang,btn){
+  if(!window.speechSynthesis)return;
+  window.speechSynthesis.cancel();
+  if(_spk&&_spk===btn){_spk=null;return;}
+  var v=_voices.length>0?_voices:window.speechSynthesis.getVoices();
+  var u=new SpeechSynthesisUtterance(text);
+  u.lang=lang;u.rate=0.9;u.pitch=1.0;u.volume=1.0;
+  if(v.length>0){var p=null;
+    if(lang==='en-US'){p=v.find(function(x){return x.name==='Alex';})||v.find(function(x){return x.lang==='en-US'&&x.localService;});}
+    else if(lang==='ja-JP'){p=v.find(function(x){return x.lang==='ja-JP';});}
+    else if(lang==='ko-KR'){p=v.find(function(x){return x.lang==='ko-KR';});}
+    if(p)u.voice=p;
+  }
+  if(btn){btn.classList.add('sp');_spk=btn;}
+  u.onend=function(){if(btn)btn.classList.remove('sp');_spk=null;};
+  window.speechSynthesis.speak(u);
+}
+function spkResult(){
+  var el=document.getElementById('tr-result-txt');if(!el)return;
+  var lang={zh:'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'}[_trLang]||'zh-TW';
+  speakText(el.textContent,lang,document.getElementById('tr-speak'));
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.spkbtn');
+  if(b)speakText(b.getAttribute('data-t'),b.getAttribute('data-l'),b);
+});
+
+// ── 天氣（GPS定位，跟著你走）──
+(function(){
+  var days=['日','一','二','三','四','五','六'];
+
+  function updateTime(){
+    var now=new Date();
+    var m=now.getMonth()+1;
+    var d=now.getDate();
+    var wd=now.getDay();
+    var hh=String(now.getHours()).padStart(2,'0');
+    var mm=String(now.getMinutes()).padStart(2,'0');
+    var de=document.getElementById('sv-date'),we2=document.getElementById('sv-wd'),te=document.getElementById('sv-time');
+    if(de)de.textContent=m+'月'+d+'日';
+    if(we2)we2.textContent='週'+days[wd];
+    if(te)te.textContent=hh+':'+mm;
+  }
+
+  function wxIcon(c){return c===0?'☀️':c<=2?'⛅':c<=3?'☁️':c<=48?'🌫️':c<=67?'🌧️':c<=77?'🌨️':'⛈️';}
+  function wxDesc(c){return c===0?'晴天':c<=2?'部分多雲':c<=3?'多雲':c<=48?'有霧':c<=67?'下雨':c<=77?'下雪':'雷雨';}
+
+  function loadWx(lat,lon,locName){
+    var loc=document.getElementById('sv-loc');
+    if(loc)loc.textContent='📍'+(locName||'定位中…');
+    fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m,weathercode&timezone=auto')
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var ic=document.getElementById('sv-icon'),tp=document.getElementById('sv-temp'),dc=document.getElementById('sv-desc');
+        if(ic)ic.textContent=wxIcon(d.current.weathercode);
+        if(tp)tp.textContent=Math.round(d.current.temperature_2m)+'°C';
+        if(dc)dc.textContent=wxDesc(d.current.weathercode);
+      }).catch(function(){});
+  }
+
+  function getLocation(){
+    if(!navigator.geolocation){loadWx(34.6937,135.5023,'大阪');return;}
+    navigator.geolocation.getCurrentPosition(
+      function(pos){
+        var lat=pos.coords.latitude,lon=pos.coords.longitude;
+        fetch('https://nominatim.openstreetmap.org/reverse?lat='+lat+'&lon='+lon+'&format=json&accept-language=zh-TW')
+          .then(function(r){return r.json();})
+          .then(function(geo){
+            var n=(geo.address&&(geo.address.city||geo.address.town||geo.address.suburb||geo.address.county))||'當前位置';
+            loadWx(lat,lon,n);
+          }).catch(function(){loadWx(lat,lon,'當前位置');});
+      },
+      function(){loadWx(34.6937,135.5023,'大阪');},
+      {timeout:8000,maximumAge:300000}
+    );
+  }
+
+  updateTime();
+  setInterval(updateTime,60000);
+  getLocation();
+  setInterval(getLocation,600000);
+})();
+
+// ── 匯率 ──
+var _rates={TWD:1,JPY:4.76,USD:0.031,KRW:41.5};
+function calcRate(){
+  var inp=document.getElementById('rate-input'),from=document.getElementById('rate-from');
+  if(!inp||!from)return;
+  var val=parseFloat(inp.value);
+  if(isNaN(val)||val===0){['twd','jpy','usd','krw'].forEach(function(c){var e=document.getElementById('r-'+c);if(e)e.textContent='—';});return;}
+  var inTWD=from.value==='TWD'?val:val/_rates[from.value];
+  var res={twd:Math.round(inTWD).toLocaleString(),jpy:Math.round(inTWD*_rates.JPY).toLocaleString(),usd:(inTWD*_rates.USD).toFixed(2),krw:Math.round(inTWD*_rates.KRW).toLocaleString()};
+  ['twd','jpy','usd','krw'].forEach(function(c){var e=document.getElementById('r-'+c);if(e)e.textContent=(c===from.value.toLowerCase()?val.toLocaleString():res[c]);});
+}
+function loadRates(){
+  fetch('https://open.er-api.com/v6/latest/TWD')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d&&d.rates){
+        _rates.JPY=d.rates.JPY||4.76;_rates.USD=d.rates.USD||0.031;_rates.KRW=d.rates.KRW||41.5;
+        var ru=document.getElementById('ref-usd'),rj=document.getElementById('ref-jpy'),rk=document.getElementById('ref-krw'),rt=document.getElementById('rate-time');
+        if(ru)ru.textContent='NT$ '+(1/_rates.USD).toFixed(1);
+        if(rj)rj.textContent='NT$ '+(100/_rates.JPY).toFixed(1);
+        if(rk)rk.textContent='NT$ '+(1000/_rates.KRW).toFixed(1);
+        var now=new Date();if(rt)rt.textContent='更新 '+now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+        calcRate();
+      }
+    }).catch(function(){});
+}
+(function(){
+  var inp=document.getElementById('rate-input'),sel=document.getElementById('rate-from');
+  if(inp)inp.addEventListener('input',calcRate);
+  if(sel)sel.addEventListener('change',calcRate);
+  loadRates();
+})();
+</script>
+</body>
+</html>
