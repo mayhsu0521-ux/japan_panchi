@@ -10,7 +10,7 @@
 body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
 
 /* Welcome */
-#welcome{position:fixed;inset:0;background:linear-gradient(160deg,#1a3a5c,#0f6e56);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:20px;overflow:hidden;}
+#welcome{position:fixed;inset:0;background:linear-gradient(160deg,#1a3a5c,#0f6e56);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:20px;overflow-y:auto;}
 #welcome.out{opacity:0;pointer-events:none;transition:opacity .5s;}
 #welcome h1{color:white;font-size:22px;margin-top:12px;text-align:center;}
 #welcome p{color:rgba(255,255,255,.75);font-size:13px;margin-top:6px;text-align:center;}
@@ -149,9 +149,28 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
 <div id="welcome">
   <svg viewBox="0 0 300 195" width="280" xmlns="http://www.w3.org/2000/svg">
     <!-- flowers -->
-    <circle cx="28" cy="25" r="7" fill="#FFB7CE" opacity=".5"/><circle cx="44" cy="15" r="5.5" fill="#FF8FAB" opacity=".45"/><circle cx="58" cy="24" r="5.5" fill="#FFB7CE" opacity=".45"/>
+    <circle cx="28" cy="25" r="7" fill="#FFB7CE" opacity=".5"/><circle cx="44" cy="15" r="5.5" fill="#FF8FAB" opacity=".45"/>
     <circle cx="242" cy="20" r="7" fill="#FFB7CE" opacity=".5"/><circle cx="258" cy="11" r="5.5" fill="#FF8FAB" opacity=".45"/><circle cx="272" cy="22" r="5.5" fill="#FFB7CE" opacity=".45"/>
-    <!-- May left -->
+            <g transform="translate(-32.2,-57.1) scale(1.35)">
+<!-- 橘貓 Meow Meow -->
+    <ellipse cx="92" cy="167" rx="15" ry="14" fill="#E8833A"/>
+    <ellipse cx="92" cy="163" rx="12.5" ry="11.5" fill="#F0A060"/>
+    <polygon points="82,152 86,161 79,161" fill="#E8833A"/><polygon points="83,154 86,160 80,160" fill="#FFB899"/>
+    <polygon points="102,152 98,161 105,161" fill="#E8833A"/><polygon points="101,154 98,160 104,160" fill="#FFB899"/>
+    <path d="M86,159 Q89,157.5 92,159" stroke="#C86820" stroke-width=".9" fill="none" opacity=".6"/>
+    <path d="M92,159 Q95,157.5 98,159" stroke="#C86820" stroke-width=".9" fill="none" opacity=".6"/>
+    <ellipse cx="86" cy="163" rx="2.8" ry="2.3" fill="#4a9f4a"/><ellipse cx="86" cy="163" rx="1.4" ry="1.9" fill="#1a1a1a"/>
+    <ellipse cx="98" cy="163" rx="2.8" ry="2.3" fill="#4a9f4a"/><ellipse cx="98" cy="163" rx="1.4" ry="1.9" fill="#1a1a1a"/>
+    <circle cx="86.7" cy="162" r=".65" fill="white"/><circle cx="98.7" cy="162" r=".65" fill="white"/>
+    <ellipse cx="92" cy="166" rx="1.7" ry="1.1" fill="#E87090"/>
+    <path d="M89.5,168.5 Q92,170.5 94.5,168.5" stroke="#C86820" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <line x1="77" y1="164.5" x2="84" y2="165" stroke="white" stroke-width=".75" opacity=".8"/>
+    <line x1="77" y1="167" x2="84" y2="166.5" stroke="white" stroke-width=".75" opacity=".8"/>
+    <line x1="100" y1="165" x2="107" y2="164.5" stroke="white" stroke-width=".75" opacity=".8"/>
+    <line x1="100" y1="166.5" x2="107" y2="167" stroke="white" stroke-width=".75" opacity=".8"/>
+    </g>
+    <g transform="translate(-21.7,-37.5) scale(1.35)">
+<!-- May left -->
     <ellipse cx="62" cy="102" rx="11" ry="13" fill="#8B5A2B"/><rect x="51" y="102" width="4" height="11" rx="2" fill="#8B5A2B"/><rect x="73" y="102" width="4" height="9" rx="2" fill="#8B5A2B"/>
     <ellipse cx="62" cy="101" rx="10" ry="10" fill="#FDDBB4"/>
     <ellipse cx="62" cy="93" rx="11" ry="6" fill="#8B5A2B"/><ellipse cx="53" cy="97" rx="3" ry="4.5" fill="#8B5A2B"/><ellipse cx="71" cy="97" rx="3" ry="4.5" fill="#8B5A2B"/>
@@ -164,7 +183,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
     <path d="M71 116 Q77 122 78 127" stroke="#FDDBB4" stroke-width="3" stroke-linecap="round" fill="none"/>
     <rect x="55" y="126" width="7" height="9" rx="2.5" fill="#FF8FAB"/><rect x="64" y="126" width="7" height="9" rx="2.5" fill="#FF8FAB"/>
     <ellipse cx="58.5" cy="135" rx="3.5" ry="1.8" fill="white"/><ellipse cx="67.5" cy="135" rx="3.5" ry="1.8" fill="white"/>
-    <!-- Punch monkey doll -->
+        </g>
+<!-- Punch monkey doll -->
     <ellipse cx="138" cy="142" rx="9" ry="9" fill="#8B5A2B"/><ellipse cx="138" cy="145" rx="6.5" ry="6" fill="#c8956c"/>
     <ellipse cx="129.5" cy="142" rx="4.5" ry="4.5" fill="#8B5A2B"/><ellipse cx="129.5" cy="142" rx="3" ry="3" fill="#c8956c"/>
     <ellipse cx="146.5" cy="142" rx="4.5" ry="4.5" fill="#8B5A2B"/><ellipse cx="146.5" cy="142" rx="3" ry="3" fill="#c8956c"/>
@@ -175,39 +195,57 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
     <path d="M134 147 Q138 150.5 142 147" stroke="#8a5848" stroke-width="1" fill="none" stroke-linecap="round" stroke-dasharray="2,1"/>
     <ellipse cx="138" cy="155" rx="7" ry="7" fill="#8B5A2B"/><ellipse cx="138" cy="156" rx="4.5" ry="5" fill="#c8956c"/>
     <!-- Punch body -->
-    <ellipse cx="150" cy="137" rx="13" ry="12" fill="#3a3530"/><ellipse cx="150" cy="139" rx="8" ry="8" fill="#7a7570"/>
-    <ellipse cx="136" cy="121" rx="6" ry="6" fill="#3a3530"/><ellipse cx="136" cy="121" rx="4" ry="4" fill="#C09888"/>
-    <ellipse cx="164" cy="121" rx="6" ry="6" fill="#3a3530"/><ellipse cx="164" cy="121" rx="4" ry="4" fill="#C09888"/>
-    <ellipse cx="150" cy="117" rx="13" ry="12" fill="#3a3530"/>
-    <ellipse cx="150" cy="107" rx="12" ry="6.5" fill="#2a2520"/><circle cx="141" cy="109" r="3.5" fill="#2a2520"/><circle cx="159" cy="109" r="3.5" fill="#2a2520"/>
-    <ellipse cx="150" cy="120" rx="9.5" ry="9" fill="#D4A088"/>
-    <ellipse cx="144.5" cy="116" rx="3.8" ry="3.8" fill="#B09080"/><ellipse cx="155.5" cy="116" rx="3.8" ry="3.8" fill="#B09080"/>
-    <ellipse cx="144.5" cy="116" rx="2.7" ry="2.7" fill="#f5e8c0"/>
-    <ellipse cx="144.5" cy="116" rx="2" ry="2.2" fill="#1a0a00"/>
-    <circle cx="145.3" cy="114.8" r=".9" fill="white"/><ellipse cx="155.5" cy="116" rx="2.7" ry="2.7" fill="#f5e8c0"/>
-    <ellipse cx="155.5" cy="116" rx="2" ry="2.2" fill="#1a0a00"/>
-    <circle cx="156.3" cy="114.8" r=".9" fill="white"/>
-    <ellipse cx="150" cy="122" rx="2.8" ry="2" fill="#A87060"/>
-    <path d="M147 125 Q150 127.5 153 125" stroke="#8a5848" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-    <ellipse cx="140" cy="122" rx="2.8" ry="1.6" fill="#e8917a" opacity=".55"/>
-    <ellipse cx="160" cy="122" rx="2.8" ry="1.6" fill="#e8917a" opacity=".55"/>
-    <path d="M138 131 Q130 135 128 142" stroke="#3a3530" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-    <path d="M162 131 Q170 135 171 142" stroke="#3a3530" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-    <ellipse cx="143" cy="150" rx="5" ry="3.5" fill="#3a3530"/><ellipse cx="157" cy="150" rx="5" ry="3.5" fill="#3a3530"/>
-    <!-- Cat -->
-    <ellipse cx="92" cy="167" rx="15" ry="14" fill="#E8833A"/><ellipse cx="92" cy="163" rx="12.5" ry="11.5" fill="#F0A060"/>
-    <polygon points="82,152 86,161 79,161" fill="#E8833A"/><polygon points="83,154 86,160 80,160" fill="#FFB899"/>
-    <polygon points="102,152 98,161 105,161" fill="#E8833A"/><polygon points="101,154 98,160 104,160" fill="#FFB899"/>
-    <ellipse cx="87" cy="162" rx="2.8" ry="2.3" fill="#4a9f4a"/><ellipse cx="87" cy="162" rx="1.4" ry="1.9" fill="#1a1a1a"/>
-    <ellipse cx="97" cy="162" rx="2.8" ry="2.3" fill="#4a9f4a"/><ellipse cx="97" cy="162" rx="1.4" ry="1.9" fill="#1a1a1a"/>
-    <circle cx="87.6" cy="161" r=".65" fill="white"/><circle cx="97.6" cy="161" r=".65" fill="white"/>
-    <ellipse cx="92" cy="165.5" rx="1.7" ry="1.1" fill="#E87090"/>
-    <path d="M89.5 168 Q92 170 94.5 168" stroke="#C86820" stroke-width="1" fill="none" stroke-linecap="round"/>
-    <line x1="77" y1="165" x2="85" y2="165.5" stroke="white" stroke-width=".8" opacity=".8"/>
-    <line x1="77" y1="167.5" x2="85" y2="167" stroke="white" stroke-width=".8" opacity=".8"/>
-    <line x1="99" y1="165.5" x2="107" y2="165" stroke="white" stroke-width=".8" opacity=".8"/>
-    <line x1="99" y1="167" x2="107" y2="167.5" stroke="white" stroke-width=".8" opacity=".8"/>
-    <!-- Vivian right -->
+    <!-- 坐姿胖奇 cx=150 -->
+    <!-- 娃娃（左手抱著） -->
+    <ellipse cx="134" cy="148" rx="7" ry="7" fill="#7B4A1E"/>
+    <ellipse cx="134" cy="151" rx="5" ry="4.5" fill="#b07840"/>
+    <ellipse cx="127" cy="147" rx="3.5" ry="3.5" fill="#7B4A1E"/><ellipse cx="127" cy="147" rx="2.2" ry="2.2" fill="#b07840"/>
+    <ellipse cx="141" cy="147" rx="3.5" ry="3.5" fill="#7B4A1E"/><ellipse cx="141" cy="147" rx="2.2" ry="2.2" fill="#b07840"/>
+    <line x1="131" y1="145.5" x2="133" y2="147.5" stroke="#3d2200" stroke-width="1" stroke-linecap="round"/>
+    <line x1="133" y1="145.5" x2="131" y2="147.5" stroke="#3d2200" stroke-width="1" stroke-linecap="round"/>
+    <line x1="135" y1="145.5" x2="137" y2="147.5" stroke="#3d2200" stroke-width="1" stroke-linecap="round"/>
+    <line x1="137" y1="145.5" x2="135" y2="147.5" stroke="#3d2200" stroke-width="1" stroke-linecap="round"/>
+    <path d="M131 153 Q134 156 137 153" stroke="#7B4A1E" stroke-width=".8" fill="none" stroke-linecap="round" stroke-dasharray="1.5,1"/>
+    <ellipse cx="134" cy="159" rx="5.5" ry="5" fill="#7B4A1E"/>
+    <ellipse cx="134" cy="160" rx="3.5" ry="4" fill="#b07840"/>
+    <!-- 身體（坐著，圓形） -->
+    <ellipse cx="152" cy="160" rx="18" ry="14" fill="#3a3530"/>
+    <ellipse cx="152" cy="160" rx="12" ry="10" fill="#6a6560"/>
+    <!-- 腿（向前伸） -->
+    <ellipse cx="138" cy="171" rx="10" ry="6" fill="#3a3530"/>
+    <ellipse cx="166" cy="171" rx="10" ry="6" fill="#3a3530"/>
+    <ellipse cx="133" cy="173" rx="6" ry="4" fill="#6a6560"/>
+    <ellipse cx="171" cy="173" rx="6" ry="4" fill="#6a6560"/>
+    <!-- 耳朵 -->
+    <ellipse cx="136" cy="130" rx="7" ry="7" fill="#3a3530"/><ellipse cx="136" cy="130" rx="5" ry="5" fill="#C09888"/>
+    <ellipse cx="168" cy="130" rx="7" ry="7" fill="#3a3530"/><ellipse cx="168" cy="130" rx="5" ry="5" fill="#C09888"/>
+    <!-- 頭 -->
+    <ellipse cx="152" cy="122" rx="20" ry="19" fill="#3a3530"/>
+    <!-- 額頭深色 -->
+    <ellipse cx="152" cy="108" rx="18" ry="9" fill="#2a2520"/>
+    <circle cx="140" cy="111" r="5.5" fill="#2a2520"/>
+    <circle cx="164" cy="111" r="5.5" fill="#2a2520"/>
+    <!-- 大臉 -->
+    <ellipse cx="152" cy="126" rx="16" ry="15" fill="#D4A088"/>
+    <!-- 眼睛（大，無眼白，直接黑眼珠） -->
+    <ellipse cx="144" cy="121" rx="4.5" ry="5" fill="#1a0a00"/>
+    <circle cx="145.5" cy="119" r="1.5" fill="white"/>
+    <circle cx="143.5" cy="123" r=".7" fill="white" opacity=".6"/>
+    <ellipse cx="160" cy="121" rx="4.5" ry="5" fill="#1a0a00"/>
+    <circle cx="161.5" cy="119" r="1.5" fill="white"/>
+    <circle cx="159.5" cy="123" r=".7" fill="white" opacity=".6"/>
+    <!-- 愛心鼻 -->
+    <path d="M149 129 Q152 126.5 155 129 Q152 132 149 129Z" fill="#A06050"/>
+    <!-- 微笑 -->
+    <path d="M146 133 Q152 138 158 133" stroke="#7a4535" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <!-- 大腮紅 -->
+    <ellipse cx="139" cy="130" rx="7" ry="4.5" fill="#FF8FAB" opacity=".55"/>
+    <ellipse cx="165" cy="130" rx="7" ry="4.5" fill="#FF8FAB" opacity=".55"/>
+    <!-- 短手（抱娃娃方向） -->
+    <path d="M137 148 Q133 151 132 155" stroke="#3a3530" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M167 148 Q171 152 171 157" stroke="#3a3530" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <g transform="translate(-79.8,-37.5) scale(1.35)">
+<!-- Vivian right -->
     <rect x="218" y="96" width="5" height="30" rx="2.5" fill="#1a1a1a"/><rect x="238" y="96" width="5" height="25" rx="2.5" fill="#1a1a1a"/>
     <ellipse cx="228" cy="102" rx="12" ry="14" fill="#1a1a1a"/>
     <ellipse cx="228" cy="101" rx="10" ry="10" fill="#FDDBB4"/>
@@ -222,6 +260,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
     <path d="M237 116 Q243 122 244 127" stroke="#FDDBB4" stroke-width="3" stroke-linecap="round" fill="none"/>
     <rect x="221" y="126" width="7" height="9" rx="2.5" fill="#e8e8e8"/><rect x="230" y="126" width="7" height="9" rx="2.5" fill="#e8e8e8"/>
     <ellipse cx="224.5" cy="135" rx="3.5" ry="1.8" fill="#ccc"/><ellipse cx="233.5" cy="135" rx="3.5" ry="1.8" fill="#ccc"/>
+    </g>
     <text x="110" y="92" font-size="11" fill="#FFB7CE" opacity=".8" font-family="sans-serif">♡</text>
     <text x="178" y="88" font-size="9" fill="#FFB7CE" opacity=".75" font-family="sans-serif">♡</text>
     <text x="144" y="84" font-size="8" fill="#FFD700" opacity=".7" font-family="sans-serif">★</text>
@@ -244,18 +283,18 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
   <rect x="6" y="6" width="258" height="30" rx="8" fill="rgba(0,0,0,.28)"/>
   <text id="sv-date" x="14" y="18" font-size="10" font-weight="500" fill="white" font-family="sans-serif">--月--日</text>
   <text id="sv-wd" x="14" y="29" font-size="9" fill="rgba(255,255,255,.7)" font-family="sans-serif">週--</text>
-  <text id="sv-loc" x="72" y="18" font-size="10" font-weight="500" fill="white" font-family="sans-serif">📍定位中</text>
+  <text x="72" y="18" font-size="10" font-weight="500" fill="white" font-family="sans-serif">📍大阪</text>
   <text id="sv-time" x="72" y="29" font-size="9" fill="rgba(255,255,255,.7)" font-family="sans-serif">--:--</text>
   <text id="sv-icon" x="138" y="28" font-size="14" font-family="sans-serif">⛅</text>
   <text id="sv-temp" x="158" y="21" font-size="11" font-weight="500" fill="white" font-family="sans-serif">--°C</text>
   <text id="sv-desc" x="158" y="31" font-size="9" fill="rgba(255,255,255,.75)" font-family="sans-serif">--</text>
   <text x="210" y="70" text-anchor="middle" font-size="18" font-weight="500" fill="white" font-family="sans-serif">2026 日本 Long Stay</text>
   <!-- May 日期框 -->
-  <rect x="80" y="84" width="115" height="18" rx="9" fill="rgba(255,255,255,.18)"/>
-  <text x="137" y="97" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">May 3/30 ～ 4/9</text>
+  <rect x="80" y="76" width="115" height="18" rx="9" fill="rgba(255,255,255,.18)"/>
+  <text x="137" y="89" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">May 3/30 ～ 4/9</text>
   <!-- Vivian 日期框 -->
-  <rect x="213" y="84" width="130" height="18" rx="9" fill="rgba(255,255,255,.18)"/>
-  <text x="278" y="97" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Vivian 3/30 ～ 6/27</text>
+  <rect x="213" y="76" width="130" height="18" rx="9" fill="rgba(255,255,255,.18)"/>
+  <text x="278" y="89" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Vivian 3/30 ～ 6/27</text>
 
 
   <line x1="0" y1="55" x2="75" y2="28" stroke="#8B4F6B" stroke-width="2" opacity=".55"/>
@@ -266,11 +305,11 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
   
   <!-- May 日期框 -->
   
-  
+  <text x="140" y="95" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">May 3/30 ～ 4/9</text>
   
   <!-- Vivian 日期框 -->
   
-  
+  <text x="275" y="95" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Vivian 3/30 ～ 6/27</text>
     <!-- 神社 + 櫻花（翻譯上方） -->
   <g transform="translate(24,95)" opacity=".85">
     <rect x="-12" y="0" width="24" height="2.5" rx="1" fill="white"/>
@@ -653,6 +692,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
     <div class="row"><div class="num">1</div><div>阪急巴士 → 箕面萱野站 → 地鐵 御堂筋線 → 淀屋橋站</div></div>
     <div class="row"><div class="num">2</div><div>京阪本線「淀屋橋站」→「京橋站」→ JR 環狀線「桃谷站」→ 步行8分</div></div>
   </div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in"><span class="badge bb">May+Vivian</span>相約晚餐</div></div></div></div>
 </div></div>
 
 <!-- 4/7 -->
@@ -664,28 +704,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
   </div>
   <div class="blue"><span class="badge bm">May</span> 今日行程：琵琶湖一日遊</div>
   <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">琵琶湖＆白鬚神社＆三千院＆滿月寺浮御堂一日遊</div><div class="ig">KLOOK 行程 · 集合地點依確認信為準</div><a class="ml" href="https://maps.google.com/?q=Lake+Biwa+Shiga" target="_blank">Maps ↗</a></div></div></div>
-  
-
-  <div class="lbl">🚌 KLOOK 琵琶湖一日遊</div>
-  <div class="bg-gray">
-    <div class="rt">大阪集合 → 大阪解散</div>
-    <div class="row"><div class="num">集</div><div><strong>難波（Namba）</strong>：約 07:30～08:00<br><span style="font-size:11px;color:#888">OCAT（大阪城市航空總站）前，詳細地點以出發前一天 Email 為準</span></div></div>
-    <div class="row"><div class="num">集</div><div><strong>梅田（Umeda）</strong>：約 08:00～08:30<br><span style="font-size:11px;color:#888">大阪駅前，詳細地點以出發前一天 Email 為準</span></div></div>
-  </div>
-  <div class="lbl">🗺️ 行程概覽</div>
-  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">⛩️ 白鬚神社<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 09:30–10:15</span></div><div class="ih">琵琶湖中水上鳥居・「近江的嚴島神社」・祈求長壽姻緣</div></div></div></div>
-  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🛕 三千院（2026/4 適用）<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 10:30–12:00</span></div><div class="ih">天台宗古寺・青苔庭園・童地藏像・春櫻盛開</div><a class="ml" href="https://maps.google.com/?q=Sanzenin+Temple+Kyoto" target="_blank">Google Maps ↗</a></div></div></div>
-  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🍱 午餐（自費）<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 12:00–13:00</span></div><div class="ih">當地餐廳・近江牛或湖魚料理</div></div></div></div>
-  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🛕 滿月寺浮御堂<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 13:30–14:30</span></div><div class="ih">近江八景・堅田落雁・湖面上的佛堂・¥300</div><a class="ml" href="https://maps.google.com/?q=Ukimido+Mangetsuji+Temple+Otsu" target="_blank">Google Maps ↗</a></div></div></div>
-  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🏘️ La Collina 近江八幡<span style="font-size:11px;font-weight:500;color:#888;margin-left:6px">約 15:00–16:30</span></div><div class="ih">草屋根甜點王國・年輪蛋糕・バームクーヘン伴手禮</div><a class="ml" href="https://maps.google.com/?q=La+Collina+Omihachiman" target="_blank">Google Maps ↗</a></div></div></div>
-  <div class="bg-gray" style="margin-top:8px">
-    <div class="rt">回程抵達大阪</div>
-    <div class="row"><div class="num">止</div><div>梅田 約 19:00、難波 約 19:30<br><span style="font-size:11px;color:#888">⚠️ 出發前一天晚上 19:00–21:00 會收到確認 Email，請務必確認</span></div></div>
-  </div>
-  <div class="amber">📌 4/7 是 Vivian 上課日（9:15–12:30），May 獨自參加此行程</div>
-  <a class="ml" href="https://www.klook.com/zh-TW/activity/154056-lake-biwa-shirahige-shrine-sanzen-in-temple-and-mangetsu-dera-tem/" target="_blank" style="display:block;margin-top:6px">KLOOK 行程頁面 ↗</a>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in"><span class="badge bb">May+Vivian</span>相約晚餐</div></div></div></div>
 </div></div>
-
 
 <!-- 4/8 -->
 <div class="card"><div class="ch" onclick="tog(this)"><div class="dot os" style="flex-direction:column;line-height:1.2">4/8<div style="font-size:9px;opacity:.75;margin-top:1px">週三</div></div><div class="ct"><div class="cl">May 大阪最後一日</div><div class="cs">大阪・Vivian 繼續 Long Stay</div></div><span class="arr">▶</span></div>
@@ -708,6 +728,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
   </div>
   <div class="fc"><div class="fh"><span class="fn">IT 213 · 台灣虎航</span><span class="fs">確認碼 M4TVXF</span></div><div class="fr"><div class="fa"><div class="fcode">KIX</div><div class="ft">19:50</div><div class="fl">T1 關西</div></div><div class="fline"></div><div class="fa"><div class="fcode">TPE</div><div class="ft">21:45</div><div class="fl">T1 桃園</div></div></div></div>
   <div class="green"><span class="badge bv" style="margin-right:6px">Vivian</span>繼續在大阪 Long Stay 至 6/27，下次見！</div>
+  <div class="item"><div class="irow"><div class="idot"></div><div class="ic"><div class="in">🚗 桃園機場接機</div><div class="ih">司機：毛先生 Kevin・車型：Toyota Cross・車號：<strong>RFW-7185</strong></div></div></div></div>
 </div></div>
 
 </div><!-- end 行程 -->
@@ -805,7 +826,37 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
     <div style="font-size:11px;color:#aaa;white-space:nowrap">💰 支出記帳</div>
     <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,rgba(0,0,0,.15))"></div>
   </div>
-  
+  <div class="bk-form" style="margin-bottom:14px">
+    <div class="bk-ft">💱 匯率換算 <span id="rate-updated" style="font-size:10px;color:#aaa"></span></div>
+    <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center">
+      <input id="rate-input" class="bk-inp" type="number" placeholder="輸入金額" style="flex:1"/>
+      <select id="rate-from" class="bk-sel">
+        <option value="TWD">NT$ 台幣</option>
+        <option value="JPY">¥ 日幣</option>
+        <option value="USD">$ 美元</option>
+        <option value="KRW">₩ 韓元</option>
+      </select>
+    </div>
+    <div id="rate-results" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+      <div class="bk-c"><div class="bk-cl">NT$ 台幣</div><div class="bk-cv tot" id="r-twd">—</div></div>
+      <div class="bk-c"><div class="bk-cl">¥ 日幣</div><div class="bk-cv may" id="r-jpy">—</div></div>
+      <div class="bk-c"><div class="bk-cl">$ 美元</div><div class="bk-cv viv" id="r-usd">—</div></div>
+      <div class="bk-c"><div class="bk-cl">₩ 韓元</div><div class="bk-cv shr" id="r-krw">—</div></div>
+    </div>
+    <div style="font-size:10px;color:#aaa;margin-bottom:6px">📊 今日參考匯率（對台幣）</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">1 美元</div><div style="font-weight:500;color:#1a3a5c" id="ref-usd">--</div></div>
+      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">100 日幣</div><div style="font-weight:500;color:#72243E" id="ref-jpy">--</div></div>
+      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">1000 韓元</div><div style="font-weight:500;color:#27500A" id="ref-krw">--</div></div>
+    </div>
+    <div style="font-size:10px;color:#aaa;margin-top:6px;text-align:right" id="rate-time"></div>
+  </div>
+  <!-- 記帳分隔 -->
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+    <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(0,0,0,.15))"></div>
+    <div style="font-size:11px;color:#aaa;white-space:nowrap">💰 支出記帳</div>
+    <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,rgba(0,0,0,.15))"></div>
+  </div>
   <div class="bk-sum">
     <div class="bk-c"><div class="bk-cl">May 總計</div><div class="bk-cv may" id="bk-may">NT$ 0</div></div>
     <div class="bk-c"><div class="bk-cl">Vivian 總計</div><div class="bk-cv viv" id="bk-viv">NT$ 0</div></div>
@@ -838,6 +889,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
     <div id="bk-list"></div>
   </div>
   <button class="bk-clr" onclick="bkClear()">清除所有記帳資料</button>
+  <button class="bk-man" onclick="bkManual()">🔗 手動輸入 Bin ID（同步兩台手機）</button>
 </div>
 
 <!-- ══ 翻譯 ══ -->
@@ -845,10 +897,10 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
   <div style="margin-bottom:14px">
     <input id="tr-inp" class="bk-inp" placeholder="輸入中文、英文、日文或韓文…" style="width:100%;margin-bottom:8px;font-size:14px;padding:11px 14px" onkeydown="if(event.key==='Enter')trGo()"/>
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">
-      <button class="bk-fb on" id="tr-zh" onclick="_trLang='zh-TW';setTrBtn(this)">→ 中文</button>
-      <button class="bk-fb" id="tr-en" onclick="_trLang='en';setTrBtn(this)">→ 英文</button>
-      <button class="bk-fb" id="tr-ja" onclick="_trLang='ja';setTrBtn(this)">→ 日文</button>
-      <button class="bk-fb" id="tr-ko" onclick="_trLang='ko';setTrBtn(this)">→ 韓文</button>
+      <button class="bk-fb on" id="tr-zh" onclick="__trLang='zh';setTrBtn(this)">→ 中文</button>
+      <button class="bk-fb" id="tr-en" onclick="__trLang='en';setTrBtn(this)">→ 英文</button>
+      <button class="bk-fb" id="tr-ja" onclick="__trLang='ja';setTrBtn(this)">→ 日文</button>
+      <button class="bk-fb" id="tr-ko" onclick="__trLang='ko';setTrBtn(this)">→ 韓文</button>
     </div>
     <button class="bk-btn" onclick="trGo()">翻譯 ↗</button>
     <div id="tr-res" style="display:none;background:#f9f8f6;border-radius:8px;padding:14px;margin-top:8px;font-size:15px;line-height:1.7"></div>
@@ -881,33 +933,33 @@ function chkPw(){
   } else {
     document.getElementById('werr').textContent='密碼錯誤 🙅';
     wpw.value='';
-    setTimeout(function(){document.getElementById('werr').textContent='';},2500);
+    setTimeout(function(){document.getElementById('werr').textContent=''},2500);
   }
 }
-wpw.addEventListener('keydown',function(e){if(e.key==='Enter')chkPw();});
+wpw.addEventListener('keydown',function(e){if(e.key==='Enter')chkPw()});
 wbtn.addEventListener('click',chkPw);
 wpw.focus();
 document.body.style.overflow='hidden';
 
 // ── Tabs ──
 function go(id,btn){
-  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
-  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on')});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on')});
   document.getElementById(id).classList.add('on');
   btn.classList.add('on');
   if(id==='bk')bkInit();
   if(id==='tr'){buildPhrases();buildEmg();}
 }
 function goTr(){
-  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
-  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on')});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on')});
   document.getElementById('tr').classList.add('on');
   buildPhrases();buildEmg();
 }
 
 // ── Card toggle ──
-function tog(el){
-  var b=el.nextElementSibling,a=el.querySelector('.arr');
+function tog(h){
+  var b=h.nextElementSibling,a=h.querySelector('.arr');
   b.classList.toggle('on');a.classList.toggle('on');
 }
 
@@ -921,44 +973,49 @@ function ck(item){
 }
 
 // ── Budget ──
-// ── Safe Storage ──
-var _ls={
-  get:function(k,def){try{return localStorage.getItem(k)||def;}catch(e){return def;}},
-  set:function(k,v){try{localStorage.setItem(k,v);}catch(e){}},
-};
 var API='$2a$10$U6EXCNvzb5QrlQ/zoAFYMevCN/KzqGl3vcRAA8U5eO7O27TrgLnS.';
 var SHARED_ID='69b84b18c3097a1dd52eb1a2';
-var BIN_ID=_ls.get('jp26_bin','');
-var BK_RATE=parseFloat(_ls.get('jp26_rate','0.21'));
+var BIN_ID=localStorage.getItem('jp26_bin')||'';
+var BK_RATE=parseFloat(localStorage.getItem('jp26_rate')||'0.21');
 var BK_FIL='all';
+
 function bkSt(msg,c){var e=document.getElementById('bk-status');if(e){e.textContent=msg;e.style.color=c||'#888';}}
+
 async function bkInit(){
   bkSt('連線中…','#185FA5');
-  if(SHARED_ID){BIN_ID=SHARED_ID;_ls.set('jp26_bin',BIN_ID);}
+  if(SHARED_ID){BIN_ID=SHARED_ID;localStorage.setItem('jp26_bin',BIN_ID);}
   if(BIN_ID){await bkLoad();return;}
   try{
     var r=await fetch('https://api.jsonbin.io/v3/b',{method:'POST',headers:{'Content-Type':'application/json','X-Master-Key':API,'X-Bin-Name':'japan2026-budget','X-Bin-Private':'false'},body:JSON.stringify({records:[]})});
-    var d=await r.json();BIN_ID=d.metadata.id;_ls.set('jp26_bin',BIN_ID);
-    bkRender([]);bkSt('✓ 已建立','#0f6e56');
-  }catch(e){bkSt('離線','#888');bkRender(JSON.parse(_ls.get('jp26_local','[]')));}
+    var d=await r.json();
+    BIN_ID=d.metadata.id;localStorage.setItem('jp26_bin',BIN_ID);
+    var n=document.getElementById('bk-note');
+    if(n){n.innerHTML='📋 請截圖此 Bin ID 告訴開發者更新：<br><strong style="font-size:13px;color:#185FA5;user-select:all">'+BIN_ID+'</strong>';n.style.display='block';}
+    bkRender([]);bkSt('✓ 已建立帳本','#0f6e56');
+  }catch(e){bkSt('離線模式','#888');bkRender(JSON.parse(localStorage.getItem('jp26_local')||'[]'));}
 }
+
 async function bkLoad(){
   try{
     var r=await fetch('https://api.jsonbin.io/v3/b/'+BIN_ID+'/latest',{headers:{'X-Master-Key':API}});
     var d=await r.json();var recs=d.record.records||[];
-    bkSt('✓ '+new Date().toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'}),'#0f6e56');
+    bkSt('✓ 同步 '+new Date().toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'}),'#0f6e56');
     bkRender(recs);return recs;
-  }catch(e){bkSt('離線','#888');return JSON.parse(_ls.get('jp26_local','[]'));}
+  }catch(e){bkSt('離線','#888');return JSON.parse(localStorage.getItem('jp26_local')||'[]');}
 }
+
 async function bkSave(recs){
   if(!BIN_ID){bkRender(recs);return;}
   bkSt('儲存中…','#185FA5');
   try{
     await fetch('https://api.jsonbin.io/v3/b/'+BIN_ID,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':API},body:JSON.stringify({records:recs})});
-    bkSt('✓ 已儲存','#0f6e56');bkRender(recs);
+    bkSt('✓ 已儲存 '+new Date().toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'}),'#0f6e56');
+    bkRender(recs);
   }catch(e){bkSt('儲存失敗','#E24B4A');}
 }
+
 function toTWD(a,c){return c==='JPY'?Math.round(a*BK_RATE):Math.round(a);}
+
 async function bkAdd(){
   var desc=document.getElementById('bk-desc').value.trim();
   var amt=parseFloat(document.getElementById('bk-amt').value);
@@ -966,75 +1023,60 @@ async function bkAdd(){
   var date=document.getElementById('bk-date').value;
   var payer=document.getElementById('bk-payer').value;
   var cat=document.getElementById('bk-cat').value;
-  if(!desc){alert('請填寫項目');return;}
-  if(!amt||amt<=0){alert('請填寫金額');return;}
+  if(!desc){alert('請填寫項目描述');return;}
+  if(!amt||amt<=0){alert('請填寫正確金額');return;}
   var recs=await bkLoad();
   recs.unshift({id:Date.now(),desc:desc,amt:amt,cur:cur,twd:toTWD(amt,cur),date:date,payer:payer,cat:cat});
   await bkSave(recs);
   document.getElementById('bk-desc').value='';
   document.getElementById('bk-amt').value='';
 }
+
 async function bkDel(id){
-  if(!confirm('確認刪除？'))return;
+  if(!confirm('確認刪除這筆記帳？'))return;
   var recs=await bkLoad();
   await bkSave(recs.filter(function(d){return d.id!==id;}));
 }
+
 async function bkClear(){
-  if(!confirm('確認清除所有記帳？'))return;
+  if(!confirm('確認清除所有記帳資料？'))return;
   await bkSave([]);
 }
+
 function bkFil(mode,btn){
   BK_FIL=mode;
-  document.querySelectorAll('.bk-fb').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');bkLoad();
+  document.querySelectorAll('.bk-fb').forEach(function(b){b.classList.remove('on')});
+  btn.classList.add('on');
+  bkLoad();
 }
+
+function bkManual(){
+  var id=prompt('請輸入 Bin ID（從另一台手機的記帳頁面取得）：');
+  if(id&&id.trim()){BIN_ID=id.trim();SHARED_ID=id.trim();localStorage.setItem('jp26_bin',BIN_ID);bkSt('✓ 已設定','#0f6e56');bkLoad();}
+}
+
 function adjRate(){
-  var r=prompt('匯率（目前：'+BK_RATE+'）',''+BK_RATE);
-  if(r&&!isNaN(parseFloat(r))){BK_RATE=parseFloat(r);_ls.set('jp26_rate',BK_RATE);bkLoad();}
+  var r=prompt('請輸入日幣對台幣匯率（目前：'+BK_RATE+'）',''+BK_RATE);
+  if(r&&!isNaN(parseFloat(r))){BK_RATE=parseFloat(r);localStorage.setItem('jp26_rate',BK_RATE);bkLoad();}
 }
+
 function bkRender(data){
   if(!data)data=[];
-  // 先按日期由新到舊排序
-  data.sort(function(a,b){
-    var da=a.date||'',db=b.date||'';
-    if(da>db)return -1;if(da<db)return 1;
-    return b.id-a.id;
-  });
   var fil=data.filter(function(d){
     if(BK_FIL==='all')return true;
     if(['may','viv','share'].includes(BK_FIL))return d.payer===BK_FIL;
     return d.cat===BK_FIL;
   });
-  var list=document.getElementById('bk-list');if(!list)return;
-  if(fil.length===0){list.innerHTML='<div class="bk-empty">尚無記帳資料 🌸</div>';}
-  else{
-    // 依月份分組
-    var groups={};
-    fil.forEach(function(d){
-      var key=d.date?d.date.substring(0,7):'無日期';
-      if(!groups[key])groups[key]=[];
-      groups[key].push(d);
-    });
-    // 月份由新到舊
-    var months=Object.keys(groups).sort(function(a,b){return a>b?-1:1;});
-    var html='';
-    months.forEach(function(month){
-      var label=month==='無日期'?'無日期':month.replace('-','年')+'月';
-      // 計算該月小計
-      var mTotal=0;
-      groups[month].forEach(function(d){mTotal+=d.twd||0;});
-      html+='<div style="display:flex;align-items:center;gap:8px;margin:10px 0 6px">';
-      html+='<div style="font-size:11px;font-weight:600;color:#1a3a5c;white-space:nowrap">📅 '+label+'</div>';
-      html+='<div style="flex:1;height:1px;background:rgba(0,0,0,.1)"></div>';
-      html+='<div style="font-size:10px;color:#888">NT$ '+mTotal.toLocaleString()+'</div>';
-      html+='</div>';
-      groups[month].forEach(function(d){
-        var lbl=d.payer==='may'?'May':d.payer==='viv'?'Vivian':'共同';
-        var amt=d.cur==='JPY'?'¥'+Number(d.amt).toLocaleString()+' (NT$'+Number(d.twd).toLocaleString()+')':'NT$'+Number(d.twd).toLocaleString();
-        html+='<div class="bk-row2"><div><div class="bk-desc">'+d.cat+' '+d.desc+'</div><span class="bk-tag '+d.payer+'">'+lbl+'</span></div><div class="bk-date">'+(d.date||'--')+'</div><div class="bk-amt '+d.payer+'">'+amt+'</div><button class="bk-del" onclick="bkDel('+d.id+')" title="刪除">🗑</button></div>';
-      });
-    });
-    list.innerHTML=html;
+  var list=document.getElementById('bk-list');
+  if(!list)return;
+  if(fil.length===0){
+    list.innerHTML='<div class="bk-empty">尚無記帳資料，快來記第一筆吧！🌸</div>';
+  }else{
+    list.innerHTML=fil.map(function(d){
+      var lbl=d.payer==='may'?'May':d.payer==='viv'?'Vivian':'共同';
+      var amt=d.cur==='JPY'?'¥'+Number(d.amt).toLocaleString()+' (NT$'+Number(d.twd).toLocaleString()+')'  :'NT$'+Number(d.twd).toLocaleString();
+      return '<div class="bk-row2"><div><div class="bk-desc">'+d.cat+' '+d.desc+'</div><span class="bk-tag '+d.payer+'">'+lbl+'</span></div><div class="bk-date">'+(d.date||'--')+'</div><div class="bk-amt '+d.payer+'">'+amt+'</div><button class="bk-del" onclick="bkDel('+d.id+')" title="刪除">🗑</button></div>';
+    }).join('');
   }
   var may=0,viv=0,shr=0;
   data.forEach(function(d){
@@ -1047,10 +1089,12 @@ function bkRender(data){
   document.getElementById('bk-tot').textContent='NT$ '+(may+viv+shr).toLocaleString();
   document.getElementById('bk-shr').textContent='NT$ '+shr.toLocaleString();
 }
+
+// init date
 (function(){var d=document.getElementById('bk-date');if(d)d.value=new Date().toISOString().split('T')[0];})();
 
 // ── Translation ──
-var _trLang='zh-TW';
+var __trLang='zh';
 var PHRASES=[
   {zh:'謝謝',en:'Thank you',ja:'ありがとうございます',ko:'감사합니다'},
   {zh:'不好意思，請問…',en:'Excuse me...',ja:'すみません…',ko:'저기요…'},
@@ -1077,79 +1121,52 @@ var EMGS=[
   {zh:'我需要看醫生',en:'I need to see a doctor.',ja:'医者が必要です',ko:'의사가 필요해요'},
   {zh:'我的東西被偷了',en:'My belongings were stolen.',ja:'荷物を盗まれました',ko:'물건을 도둑맞았어요'},
   {zh:'我對___過敏',en:"I'm allergic to ___.",ja:'___アレルギーがあります',ko:'___알레르기가 있어요'},
-  {zh:'台灣代表處',en:'TECO Japan: +81-3-3280-7811',ja:'台湾窓口：+81-3-3280-7811',ko:'대만 대표처：+81-3-3280-7811'},
+  {zh:'台灣代表處（日本）',en:'TECO Japan: +81-3-3280-7811',ja:'台湾窓口：+81-3-3280-7811',ko:'대만 대표처：+81-3-3280-7811'},
 ];
-function mkRow(p,isEmg){
-  var color=isEmg?'#E24B4A':'inherit';
-  var row='<div class="item"><div style="padding:4px 0">';
-  row+='<div style="font-size:13px;font-weight:500;color:'+color+';margin-bottom:4px">'+p.zh+'</div>';
-  row+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">';
-  row+='<div style="font-size:11px"><span style="color:#aaa;font-size:10px">EN</span> '+p.en+' <button class="tr-btn spkbtn" data-t="'+p.en.replace(/"/g,'&quot;')+'" data-l="en-US">🔊</button></div>';
-  row+='<div style="font-size:11px"><span style="color:#aaa;font-size:10px">JA</span> '+p.ja+' <button class="tr-btn spkbtn" data-t="'+p.ja.replace(/"/g,'&quot;')+'" data-l="ja-JP">🔊</button></div>';
-  row+='<div style="font-size:11px"><span style="color:#aaa;font-size:10px">KO</span> '+p.ko+' <button class="tr-btn spkbtn" data-t="'+p.ko.replace(/"/g,'&quot;')+'" data-l="ko-KR">🔊</button></div>';
-  row+='</div></div></div>';
-  return row;
+
+function phRow(p){
+  var jsc=function(t,l){return 'speakText("'+t.replace(/"/g,'&quot;')+'","'+l+'",this)';};
+  return '<div class="item"><div style="padding:4px 0"><div style="font-size:13px;font-weight:500;margin-bottom:4px">'+p.zh+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px"><div style="font-size:11px"><span style="color:#aaa;font-size:10px">EN</span> '+p.en+' <button class="tr-btn" onclick="'+jsc(p.en,'en-US')+'">🔊</button></div><div style="font-size:11px"><span style="color:#aaa;font-size:10px">JA</span> '+p.ja+' <button class="tr-btn" onclick="'+jsc(p.ja,'ja-JP')+'">🔊</button></div><div style="font-size:11px"><span style="color:#aaa;font-size:10px">KO</span> '+p.ko+' <button class="tr-btn" onclick="'+jsc(p.ko,'ko-KR')+'">🔊</button></div></div></div></div>';
 }
+
 function buildPhrases(){
-  var p=document.getElementById('tr-phrases');
-  if(p&&!p.innerHTML)p.innerHTML=PHRASES.map(function(x){return mkRow(x,false);}).join('');
+  var p=document.getElementById('tr-phrases');if(p&&!p.innerHTML)p.innerHTML=PHRASES.map(phRow).join('');
 }
 function buildEmg(){
   var e=document.getElementById('tr-emg');
-  if(e&&!e.innerHTML)e.innerHTML=EMGS.map(function(x){return mkRow(x,true);}).join('');
+  if(e&&!e.innerHTML)e.innerHTML=EMGS.map(function(p){
+    var jsc=function(t,l){return 'speakText("'+t.replace(/"/g,'&quot;')+'","'+l+'",this)';};
+    return '<div class="item"><div style="padding:4px 0"><div style="font-size:13px;font-weight:500;color:#E24B4A;margin-bottom:4px">'+p.zh+' <button class="tr-btn" onclick="'+jsc(p.zh,'zh-TW')+'">🔊</button></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px"><div style="font-size:11px"><span style="color:#aaa;font-size:10px">EN</span> '+p.en+' <button class="tr-btn" onclick="'+jsc(p.en,'en-US')+'">🔊</button></div><div style="font-size:11px"><span style="color:#aaa;font-size:10px">JA</span> '+p.ja+' <button class="tr-btn" onclick="'+jsc(p.ja,'ja-JP')+'">🔊</button></div><div style="font-size:11px"><span style="color:#aaa;font-size:10px">KO</span> '+p.ko+' <button class="tr-btn" onclick="'+jsc(p.ko,'ko-KR')+'">🔊</button></div></div></div></div>';
+  }).join('');
 }
+
 function setTrBtn(btn){
-  document.querySelectorAll('#tr-zh,#tr-en,#tr-ja,#tr-ko').forEach(function(b){b.classList.remove('on');});
+  document.querySelectorAll('#tr-zh,#tr-en,#tr-ja,#tr-ko').forEach(function(b){b.classList.remove('on')});
   btn.classList.add('on');
 }
+
 function trGo(){
   var text=document.getElementById('tr-inp').value.trim();
   if(!text){alert('請輸入要翻譯的文字');return;}
+  var url='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl='+'+_trLang+'&dt=t&q='+encodeURIComponent(text);
   var res=document.getElementById('tr-res');
   res.style.display='block';res.innerHTML='<span style="color:#aaa">翻譯中…</span>';
-  var langMap={'zh-TW':'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'};
-  var tl=langMap[_trLang]||'ja-JP';
-  var label={'zh-TW':'繁體中文',en:'English',ja:'日本語',ko:'한국어'}[_trLang]||'繁體中文';
-  // 先用 Google gtx，失敗再用 MyMemory
-  var url1='https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh-TW&tl='+_trLang+'&dt=t&q='+encodeURIComponent(text);
-  var url2='https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair=zh-TW|'+tl;
-  fetch(url1)
-    .then(function(r){return r.json();})
-    .then(function(d){
-      var result=d[0].map(function(x){return x[0];}).join('');
-      res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
-      document.getElementById('tr-speak-wrap').style.display='block';
-    })
-    .catch(function(){
-      // fallback MyMemory
-      fetch(url2)
-        .then(function(r){return r.json();})
-        .then(function(d){
-          var result=d.responseData&&d.responseData.translatedText||'';
-          res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
-          document.getElementById('tr-speak-wrap').style.display='block';
-        })
-        .catch(function(){res.innerHTML='<span style="color:#E24B4A">翻譯失敗，請確認網路連線</span>';});
-    });
+  fetch(url).then(function(r){return r.json();}).then(function(d){
+    var result=d[0].map(function(x){return x[0];}).join('');
+    var label={zh:'中文',en:'English',ja:'日本語',ko:'한국어'}[_trLang];
+    res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
+    document.getElementById('tr-speak-wrap').style.display='block';
+  }).catch(function(){res.innerHTML='<span style="color:#E24B4A">翻譯失敗，請確認網路連線</span>';});
 }
 
 // ── Speech ──
-var _spk=null,_voices=[];
-function _lv(){_voices=window.speechSynthesis.getVoices();}
-if(window.speechSynthesis){_lv();window.speechSynthesis.onvoiceschanged=function(){_lv();};}
+var _spk=null;
 function speakText(text,lang,btn){
-  if(!window.speechSynthesis)return;
+  if(!window.speechSynthesis){alert('瀏覽器不支援語音播放');return;}
   window.speechSynthesis.cancel();
   if(_spk&&_spk===btn){_spk=null;return;}
-  var v=_voices.length>0?_voices:window.speechSynthesis.getVoices();
   var u=new SpeechSynthesisUtterance(text);
-  u.lang=lang;u.rate=0.9;u.pitch=1.0;u.volume=1.0;
-  if(v.length>0){var p=null;
-    if(lang==='en-US'){p=v.find(function(x){return x.name==='Alex';})||v.find(function(x){return x.lang==='en-US'&&x.localService;});}
-    else if(lang==='ja-JP'){p=v.find(function(x){return x.lang==='ja-JP';});}
-    else if(lang==='ko-KR'){p=v.find(function(x){return x.lang==='ko-KR';});}
-    if(p)u.voice=p;
-  }
+  u.lang=lang;u.rate=0.9;
   if(btn){btn.classList.add('sp');_spk=btn;}
   u.onend=function(){if(btn)btn.classList.remove('sp');_spk=null;};
   window.speechSynthesis.speak(u);
@@ -1159,35 +1176,23 @@ function spkResult(){
   var lang={zh:'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'}[_trLang]||'zh-TW';
   speakText(el.textContent,lang,document.getElementById('tr-speak'));
 }
-document.addEventListener('click',function(e){
-  var b=e.target.closest('.spkbtn');
-  if(b)speakText(b.getAttribute('data-t'),b.getAttribute('data-l'),b);
-});
 
-// ── 天氣（GPS定位，跟著你走）──
+/* ── 天氣 ── */
 (function(){
   var days=['日','一','二','三','四','五','六'];
-
   function updateTime(){
-    var now=new Date();
-    var m=now.getMonth()+1;
-    var d=now.getDate();
-    var wd=now.getDay();
-    var hh=String(now.getHours()).padStart(2,'0');
-    var mm=String(now.getMinutes()).padStart(2,'0');
-    var de=document.getElementById('sv-date'),we2=document.getElementById('sv-wd'),te=document.getElementById('sv-time');
+    var now=new Date(new Date().getTime()+(9*60-new Date().getTimezoneOffset())*60000);
+    var d=now.getUTCDate(),m=now.getUTCMonth()+1,wd=now.getUTCDay();
+    var hh=String(now.getUTCHours()).padStart(2,'0'),mm=String(now.getUTCMinutes()).padStart(2,'0');
+    var de=document.getElementById('sv-date'),we=document.getElementById('sv-wd'),te=document.getElementById('sv-time');
     if(de)de.textContent=m+'月'+d+'日';
-    if(we2)we2.textContent='週'+days[wd];
+    if(we)we.textContent='週'+days[wd];
     if(te)te.textContent=hh+':'+mm;
   }
-
-  function wxIcon(c){return c===0?'☀️':c<=2?'⛅':c<=3?'☁️':c<=48?'🌫️':c<=67?'🌧️':c<=77?'🌨️':'⛈️';}
-  function wxDesc(c){return c===0?'晴天':c<=2?'部分多雲':c<=3?'多雲':c<=48?'有霧':c<=67?'下雨':c<=77?'下雪':'雷雨';}
-
-  function loadWx(lat,lon,locName){
-    var loc=document.getElementById('sv-loc');
-    if(loc)loc.textContent='📍'+(locName||'定位中…');
-    fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m,weathercode&timezone=auto')
+  function wxIcon(c){return c===0?'☀️':c<=2?'⛅':c<=3?'☁️':c<=67?'🌧️':c<=77?'🌨️':'⛈️';}
+  function wxDesc(c){return c===0?'晴天':c<=2?'部分多雲':c<=3?'多雲':c<=67?'下雨':c<=77?'下雪':'雷雨';}
+  function loadWx(){
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=34.6937&longitude=135.5023&current=temperature_2m,weathercode&timezone=Asia/Tokyo')
       .then(function(r){return r.json();})
       .then(function(d){
         var ic=document.getElementById('sv-icon'),tp=document.getElementById('sv-temp'),dc=document.getElementById('sv-desc');
@@ -1196,31 +1201,105 @@ document.addEventListener('click',function(e){
         if(dc)dc.textContent=wxDesc(d.current.weathercode);
       }).catch(function(){});
   }
-
-  function getLocation(){
-    if(!navigator.geolocation){loadWx(34.6937,135.5023,'大阪');return;}
-    navigator.geolocation.getCurrentPosition(
-      function(pos){
-        var lat=pos.coords.latitude,lon=pos.coords.longitude;
-        fetch('https://nominatim.openstreetmap.org/reverse?lat='+lat+'&lon='+lon+'&format=json&accept-language=zh-TW')
-          .then(function(r){return r.json();})
-          .then(function(geo){
-            var n=(geo.address&&(geo.address.city||geo.address.town||geo.address.suburb||geo.address.county))||'當前位置';
-            loadWx(lat,lon,n);
-          }).catch(function(){loadWx(lat,lon,'當前位置');});
-      },
-      function(){loadWx(34.6937,135.5023,'大阪');},
-      {timeout:8000,maximumAge:300000}
-    );
-  }
-
-  updateTime();
-  setInterval(updateTime,60000);
-  getLocation();
-  setInterval(getLocation,600000);
+  updateTime();setInterval(updateTime,60000);
+  loadWx();setInterval(loadWx,600000);
 })();
 
-// ── 匯率 ──
+/* ── 匯率 ── */
+var _rates={TWD:1,JPY:4.76,USD:0.031,KRW:41.5};
+function calcRate(){
+  var inp=document.getElementById('rate-input');
+  var from=document.getElementById('rate-from');
+  if(!inp||!from)return;
+  var val=parseFloat(inp.value);
+  if(isNaN(val)||val===0){['twd','jpy','usd','krw'].forEach(function(c){var e=document.getElementById('r-'+c);if(e)e.textContent='—';});return;}
+  var inTWD=from.value==='TWD'?val:val/_rates[from.value];
+  var res={twd:Math.round(inTWD).toLocaleString(),jpy:Math.round(inTWD*_rates.JPY).toLocaleString(),usd:(inTWD*_rates.USD).toFixed(2),krw:Math.round(inTWD*_rates.KRW).toLocaleString()};
+  ['twd','jpy','usd','krw'].forEach(function(c){var e=document.getElementById('r-'+c);if(e)e.textContent=(c===from.value.toLowerCase()?val.toLocaleString():res[c]);});
+}
+function loadRates(){
+  fetch('https://open.er-api.com/v6/latest/TWD')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d&&d.rates){
+        _rates.JPY=d.rates.JPY||4.76;_rates.USD=d.rates.USD||0.031;_rates.KRW=d.rates.KRW||41.5;
+        var ru=document.getElementById('ref-usd'),rj=document.getElementById('ref-jpy'),rk=document.getElementById('ref-krw'),rt=document.getElementById('rate-time');
+        if(ru)ru.textContent='NT$ '+(1/_rates.USD).toFixed(1);
+        if(rj)rj.textContent='NT$ '+(100/_rates.JPY).toFixed(1);
+        if(rk)rk.textContent='NT$ '+(1000/_rates.KRW).toFixed(1);
+        var now=new Date();if(rt)rt.textContent='更新 '+now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+        calcRate();
+      }
+    }).catch(function(){});
+}
+(function(){
+  var inp=document.getElementById('rate-input'),sel=document.getElementById('rate-from');
+  if(inp)inp.addEventListener('input',calcRate);
+  if(sel)sel.addEventListener('change',calcRate);
+  loadRates();
+})();
+
+/* ── 語音 ── */
+var _spk=null,_voices=[];
+function _loadVoices(){_voices=window.speechSynthesis.getVoices();}
+if(window.speechSynthesis){_loadVoices();window.speechSynthesis.onvoiceschanged=function(){_loadVoices();};}
+function speakText(text,lang,btn){
+  if(!window.speechSynthesis)return;
+  window.speechSynthesis.cancel();
+  if(_spk&&_spk===btn){_spk=null;return;}
+  var v=_voices.length>0?_voices:window.speechSynthesis.getVoices();
+  var u=new SpeechSynthesisUtterance(text);
+  u.lang=lang;u.rate=0.9;u.pitch=1.0;u.volume=1.0;
+  if(v.length>0){
+    var p=null;
+    if(lang==='en-US'){p=v.find(function(x){return x.name==='Alex';})||v.find(function(x){return x.name==='Google UK English Male';})||v.find(function(x){return x.lang==='en-US'&&x.localService;});}
+    else if(lang==='ja-JP'){p=v.find(function(x){return x.lang==='ja-JP'&&x.localService;})||v.find(function(x){return x.lang==='ja-JP';});}
+    else if(lang==='ko-KR'){p=v.find(function(x){return x.lang==='ko-KR';});}
+    if(p)u.voice=p;
+  }
+  if(btn){btn.classList.add('sp');_spk=btn;}
+  u.onend=function(){if(btn)btn.classList.remove('sp');_spk=null;};
+  u.onerror=function(){if(btn)btn.classList.remove('sp');_spk=null;};
+  window.speechSynthesis.speak(u);
+}
+function spkResult(){
+  var el=document.getElementById('tr-result-txt');if(!el)return;
+  var lang={zh:'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'}[window._trLang||'zh']||'zh-TW';
+  speakText(el.textContent,lang,document.getElementById('tr-speak'));
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.spkbtn');
+  if(b)speakText(b.getAttribute('data-t'),b.getAttribute('data-l'),b);
+});
+
+
+/* ── 天氣 ── */
+(function(){
+  var days=['日','一','二','三','四','五','六'];
+  function updateTime(){
+    var now=new Date(new Date().getTime()+(9*60-new Date().getTimezoneOffset())*60000);
+    var d=now.getUTCDate(),m=now.getUTCMonth()+1,wd=now.getUTCDay();
+    var hh=String(now.getUTCHours()).padStart(2,'0'),mm=String(now.getUTCMinutes()).padStart(2,'0');
+    var de=document.getElementById('sv-date'),we2=document.getElementById('sv-wd'),te=document.getElementById('sv-time');
+    if(de)de.textContent=m+'月'+d+'日';
+    if(we2)we2.textContent='週'+days[wd];
+    if(te)te.textContent=hh+':'+mm;
+  }
+  function wxIcon(c){return c===0?'☀️':c<=2?'⛅':c<=3?'☁️':c<=67?'🌧️':c<=77?'🌨️':'⛈️';}
+  function wxDesc(c){return c===0?'晴天':c<=2?'部分多雲':c<=3?'多雲':c<=67?'下雨':c<=77?'下雪':'雷雨';}
+  function loadWx(){
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=34.6937&longitude=135.5023&current=temperature_2m,weathercode&timezone=Asia/Tokyo')
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var ic=document.getElementById('sv-icon'),tp=document.getElementById('sv-temp'),dc=document.getElementById('sv-desc');
+        if(ic)ic.textContent=wxIcon(d.current.weathercode);
+        if(tp)tp.textContent=Math.round(d.current.temperature_2m)+'°C';
+        if(dc)dc.textContent=wxDesc(d.current.weathercode);
+      }).catch(function(){});
+  }
+  updateTime();setInterval(updateTime,60000);loadWx();setInterval(loadWx,600000);
+})();
+/* ── 匯率 ── */
 var _rates={TWD:1,JPY:4.76,USD:0.031,KRW:41.5};
 function calcRate(){
   var inp=document.getElementById('rate-input'),from=document.getElementById('rate-from');
@@ -1252,6 +1331,34 @@ function loadRates(){
   if(sel)sel.addEventListener('change',calcRate);
   loadRates();
 })();
+/* ── 語音 ── */
+var _spk=null,_voices=[];
+function _lv(){_voices=window.speechSynthesis.getVoices();}
+if(window.speechSynthesis){_lv();window.speechSynthesis.onvoiceschanged=function(){_lv();};}
+function speakText(text,lang,btn){
+  if(!window.speechSynthesis)return;
+  window.speechSynthesis.cancel();
+  if(_spk&&_spk===btn){_spk=null;return;}
+  var v=_voices.length>0?_voices:window.speechSynthesis.getVoices();
+  var u=new SpeechSynthesisUtterance(text);
+  u.lang=lang;u.rate=0.9;u.pitch=1.0;u.volume=1.0;
+  if(v.length>0){var p=null;
+    if(lang==='en-US'){p=v.find(function(x){return x.name==='Alex';})||v.find(function(x){return x.lang==='en-US'&&x.localService;});}
+    else if(lang==='ja-JP'){p=v.find(function(x){return x.lang==='ja-JP';});}
+    else if(lang==='ko-KR'){p=v.find(function(x){return x.lang==='ko-KR';});}
+    if(p)u.voice=p;}
+  if(btn){btn.classList.add('sp');_spk=btn;}
+  u.onend=function(){if(btn)btn.classList.remove('sp');_spk=null;};
+  window.speechSynthesis.speak(u);
+}
+function spkResult(){
+  var el=document.getElementById('tr-result-txt');if(!el)return;
+  var lang={zh:'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'}[window._trLang||'zh']||'zh-TW';
+  speakText(el.textContent,lang,document.getElementById('tr-speak'));
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.spkbtn');if(b)speakText(b.getAttribute('data-t'),b.getAttribute('data-l'),b);
+});
 </script>
 </body>
 </html>
