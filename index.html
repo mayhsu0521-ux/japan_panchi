@@ -1246,12 +1246,12 @@ function setTrBtn(btn){
 function trGo(){
   var text=document.getElementById('tr-inp').value.trim();
   if(!text){alert('請輸入要翻譯的文字');return;}
-  var url='https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh-TW&tl='+_trLang+'&dt=t&q='+encodeURIComponent(text);
+  var url='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl='+__trLang+'&dt=t&q='+encodeURIComponent(text);
   var res=document.getElementById('tr-res');
   res.style.display='block';res.innerHTML='<span style="color:#aaa">翻譯中…</span>';
   fetch(url).then(function(r){return r.json();}).then(function(d){
     var result=d[0].map(function(x){return x[0];}).join('');
-    var label={zh:'中文',en:'English',ja:'日本語',ko:'한국어'}[_trLang];
+    var label={zh:'中文',en:'English',ja:'日本語',ko:'한국어'}[__trLang];
     res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
     document.getElementById('tr-speak-wrap').style.display='block';
   }).catch(function(){res.innerHTML='<span style="color:#E24B4A">翻譯失敗，請確認網路連線</span>';});
@@ -1269,12 +1269,6 @@ function speakText(text,lang,btn){
   u.onend=function(){if(btn)btn.classList.remove('sp');_spk=null;};
   window.speechSynthesis.speak(u);
 }
-function spkResult(){
-  var el=document.getElementById('tr-result-txt');if(!el)return;
-  var lang={zh:'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'}[_trLang]||'zh-TW';
-  speakText(el.textContent,lang,document.getElementById('tr-speak'));
-}
-
 /* ── 天氣 ── */
 (function(){
   var days=['日','一','二','三','四','五','六'];
@@ -1381,17 +1375,6 @@ function speakText(text,lang,btn){
   u.onerror=function(){if(btn)btn.classList.remove('sp');_spk=null;};
   window.speechSynthesis.speak(u);
 }
-function spkResult(){
-  var el=document.getElementById('tr-result-txt');if(!el)return;
-  var lang={zh:'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'}[window._trLang||'zh']||'zh-TW';
-  speakText(el.textContent,lang,document.getElementById('tr-speak'));
-}
-document.addEventListener('click',function(e){
-  var b=e.target.closest('.spkbtn');
-  if(b)speakText(b.getAttribute('data-t'),b.getAttribute('data-l'),b);
-});
-
-
 /* ── 天氣 ── */
 (function(){
   var days=['日','一','二','三','四','五','六'];
@@ -1473,7 +1456,7 @@ function speakText(text,lang,btn){
 }
 function spkResult(){
   var el=document.getElementById('tr-result-txt');if(!el)return;
-  var lang={zh:'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'}[window._trLang||'zh']||'zh-TW';
+  var lang={zh:'zh-TW',en:'en-US',ja:'ja-JP',ko:'ko-KR'}[window.__trLang||'zh']||'zh-TW';
   speakText(el.textContent,lang,document.getElementById('tr-speak'));
 }
 document.addEventListener('click',function(e){
