@@ -881,36 +881,6 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f0;color:#1a1a1a;}
         <option value="KRW">₩ 韓元</option>
       </select>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
-      <div class="bk-c"><div class="bk-cl">NT$ 台幣</div><div class="bk-cv tot" id="r-twd">—</div></div>
-      <div class="bk-c"><div class="bk-cl">¥ 日幣</div><div class="bk-cv may" id="r-jpy">—</div></div>
-      <div class="bk-c"><div class="bk-cl">$ 美元</div><div class="bk-cv viv" id="r-usd">—</div></div>
-      <div class="bk-c"><div class="bk-cl">₩ 韓元</div><div class="bk-cv shr" id="r-krw">—</div></div>
-    </div>
-    <div style="font-size:10px;color:#aaa;margin-bottom:6px">📊 今日參考匯率</div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap">
-      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">1 美元</div><div style="font-weight:500;color:#1a3a5c" id="ref-usd">--</div></div>
-      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">100 日幣</div><div style="font-weight:500;color:#72243E" id="ref-jpy">--</div></div>
-      <div style="background:#f9f8f6;border-radius:8px;padding:6px 10px;font-size:11px;flex:1;text-align:center"><div style="color:#888;font-size:10px">1000 韓元</div><div style="font-weight:500;color:#27500A" id="ref-krw">--</div></div>
-    </div>
-    <div style="font-size:10px;color:#aaa;margin-top:6px;text-align:right" id="rate-time"></div>
-  </div>
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-    <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(0,0,0,.15))"></div>
-    <div style="font-size:11px;color:#aaa;white-space:nowrap">💰 支出記帳</div>
-    <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,rgba(0,0,0,.15))"></div>
-  </div>
-  <div class="bk-form" style="margin-bottom:14px">
-    <div class="bk-ft">💱 匯率換算 <span id="rate-updated" style="font-size:10px;color:#aaa"></span></div>
-    <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center">
-      <input id="rate-input" class="bk-inp" type="number" placeholder="輸入金額" style="flex:1"/>
-      <select id="rate-from" class="bk-sel">
-        <option value="TWD">NT$ 台幣</option>
-        <option value="JPY">¥ 日幣</option>
-        <option value="USD">$ 美元</option>
-        <option value="KRW">₩ 韓元</option>
-      </select>
-    </div>
     <div id="rate-results" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
       <div class="bk-c"><div class="bk-cl">NT$ 台幣</div><div class="bk-cv tot" id="r-twd">—</div></div>
       <div class="bk-c"><div class="bk-cl">¥ 日幣</div><div class="bk-cv may" id="r-jpy">—</div></div>
@@ -1223,8 +1193,10 @@ var EMGS=[
 ];
 
 function phRow(p){
-  var jsc=function(t,l){return 'speakText("'+t.replace(/"/g,'&quot;')+'","'+l+'",this)';};
-  return '<div class="item"><div style="padding:4px 0"><div style="font-size:13px;font-weight:500;margin-bottom:4px">'+p.zh+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px"><div style="font-size:11px"><span style="color:#aaa;font-size:10px">EN</span> '+p.en+' <button class="tr-btn" onclick="'+jsc(p.en,'en-US')+'">🔊</button></div><div style="font-size:11px"><span style="color:#aaa;font-size:10px">JA</span> '+p.ja+' <button class="tr-btn" onclick="'+jsc(p.ja,'ja-JP')+'">🔊</button></div><div style="font-size:11px"><span style="color:#aaa;font-size:10px">KO</span> '+p.ko+' <button class="tr-btn" onclick="'+jsc(p.ko,'ko-KR')+'">🔊</button></div></div></div></div>';
+  var btn=function(t,l,label){
+    return '<div style="font-size:11px"><span style="color:#aaa;font-size:10px">'+label+'</span> '+t+' <button class="tr-btn spkbtn" data-t="'+t.replace(/"/g,'&quot;').replace(/'/g,'&#39;')+'" data-l="'+l+'">🔊</button></div>';
+  };
+  return '<div class="item"><div style="padding:4px 0"><div style="font-size:13px;font-weight:500;margin-bottom:4px">'+p.zh+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">'+btn(p.en,'en-US','EN')+btn(p.ja,'ja-JP','JA')+btn(p.ko,'ko-KR','KO')+'</div></div></div>';
 }
 
 function buildPhrases(){
@@ -1233,8 +1205,10 @@ function buildPhrases(){
 function buildEmg(){
   var e=document.getElementById('tr-emg');
   if(e&&!e.innerHTML)e.innerHTML=EMGS.map(function(p){
-    var jsc=function(t,l){return 'speakText("'+t.replace(/"/g,'&quot;')+'","'+l+'",this)';};
-    return '<div class="item"><div style="padding:4px 0"><div style="font-size:13px;font-weight:500;color:#E24B4A;margin-bottom:4px">'+p.zh+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px"><div style="font-size:11px"><span style="color:#aaa;font-size:10px">EN</span> '+p.en+' <button class="tr-btn" onclick="'+jsc(p.en,'en-US')+'">🔊</button></div><div style="font-size:11px"><span style="color:#aaa;font-size:10px">JA</span> '+p.ja+' <button class="tr-btn" onclick="'+jsc(p.ja,'ja-JP')+'">🔊</button></div><div style="font-size:11px"><span style="color:#aaa;font-size:10px">KO</span> '+p.ko+' <button class="tr-btn" onclick="'+jsc(p.ko,'ko-KR')+'">🔊</button></div></div></div></div>';
+    var btn=function(t,l,label){
+      return '<div style="font-size:11px"><span style="color:#aaa;font-size:10px">'+label+'</span> '+t+' <button class="tr-btn spkbtn" data-t="'+t.replace(/"/g,'&quot;').replace(/'/g,'&#39;')+'" data-l="'+l+'">🔊</button></div>';
+    };
+    return '<div class="item"><div style="padding:4px 0"><div style="font-size:13px;font-weight:500;color:#E24B4A;margin-bottom:4px">'+p.zh+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">'+btn(p.en,'en-US','EN')+btn(p.ja,'ja-JP','JA')+btn(p.ko,'ko-KR','KO')+'</div></div></div>';
   }).join('');
 }
 
@@ -1246,18 +1220,45 @@ function setTrBtn(btn){
 function trGo(){
   var text=document.getElementById('tr-inp').value.trim();
   if(!text){alert('請輸入要翻譯的文字');return;}
-  var langMap={zh:'zh-TW',en:'en',ja:'ja',ko:'ko'};
-  var tl=langMap[__trLang]||'ja';
-  var url='https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair=auto|'+tl;
   var res=document.getElementById('tr-res');
-  res.style.display='block';res.innerHTML='<span style="color:#aaa">翻譯中…</span>';
-  fetch(url).then(function(r){return r.json();}).then(function(d){
-    var result=(d.responseData&&d.responseData.translatedText)||'';
-    if(!result||d.responseStatus!==200)throw new Error('fail');
-    var label={zh:'中文',en:'English',ja:'日本語',ko:'한국어'}[__trLang];
-    res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
-    document.getElementById('tr-speak-wrap').style.display='block';
-  }).catch(function(){res.innerHTML='<span style="color:#E24B4A">翻譯失敗，請確認網路連線</span>';});
+  res.style.display='block';
+  res.innerHTML='<span style="color:#aaa">翻譯中…</span>';
+  var label={zh:'中文',en:'English',ja:'日本語',ko:'한국어'}[__trLang];
+  var slMap={zh:'zh-TW',en:'en-US',ja:'ja',ko:'ko'};
+  var tlMap={zh:'zh-TW',en:'en-US',ja:'ja',ko:'ko'};
+  var sl='zh-TW';
+  var tl=tlMap[__trLang]||'ja';
+  // 嘗試偵測輸入語言
+  if(/[\u3040-\u30FF\u4E00-\u9FFF]/.test(text)&&__trLang==='zh'){
+    res.innerHTML='<span style="color:#E24B4A">目標語言與輸入相同，請選擇要翻譯成的語言</span>';
+    return;
+  }
+  var url='https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair='+sl+'|'+tl+'&de=travel@example.com';
+  fetch(url)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.responseStatus===200&&d.responseData&&d.responseData.translatedText){
+        var result=d.responseData.translatedText;
+        res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
+        document.getElementById('tr-speak-wrap').style.display='block';
+      } else {
+        // fallback: 嘗試不帶 email
+        return fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair=zh|'+tl)
+          .then(function(r2){return r2.json();})
+          .then(function(d2){
+            if(d2.responseStatus===200&&d2.responseData&&d2.responseData.translatedText){
+              var result=d2.responseData.translatedText;
+              res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
+              document.getElementById('tr-speak-wrap').style.display='block';
+            } else {
+              res.innerHTML='<span style="color:#E24B4A">翻譯失敗（'+d2.responseStatus+'）</span>';
+            }
+          });
+      }
+    })
+    .catch(function(e){
+      res.innerHTML='<span style="color:#E24B4A">網路錯誤，請確認連線</span>';
+    });
 }
 
 // ── Speech ──
@@ -1406,23 +1407,53 @@ function loadRates(){
 })();
 /* ── 語音 ── */
 var _spk=null,_voices=[];
-function _lv(){_voices=window.speechSynthesis.getVoices();}
-if(window.speechSynthesis){_lv();window.speechSynthesis.onvoiceschanged=function(){_lv();};}
+function _lv(){
+  var v=window.speechSynthesis.getVoices();
+  if(v.length>0)_voices=v;
+}
+if(window.speechSynthesis){
+  _lv();
+  window.speechSynthesis.onvoiceschanged=function(){_lv();};
+  setTimeout(_lv,500);
+  setTimeout(_lv,1500);
+}
 function speakText(text,lang,btn){
-  if(!window.speechSynthesis)return;
+  if(!window.speechSynthesis){alert('您的瀏覽器不支援語音功能');return;}
   window.speechSynthesis.cancel();
-  if(_spk&&_spk===btn){_spk=null;return;}
+  if(_spk===btn){_spk=null;return;}
   var v=_voices.length>0?_voices:window.speechSynthesis.getVoices();
-  var u=new SpeechSynthesisUtterance(text);
-  u.lang=lang;u.rate=0.9;u.pitch=1.0;u.volume=1.0;
-  if(v.length>0){var p=null;
-    if(lang==='en-US'){p=v.find(function(x){return x.name==='Alex';})||v.find(function(x){return x.lang==='en-US'&&x.localService;});}
-    else if(lang==='ja-JP'){p=v.find(function(x){return x.lang==='ja-JP';});}
-    else if(lang==='ko-KR'){p=v.find(function(x){return x.lang==='ko-KR';});}
-    if(p)u.voice=p;}
-  if(btn){btn.classList.add('sp');_spk=btn;}
-  u.onend=function(){if(btn)btn.classList.remove('sp');_spk=null;};
-  window.speechSynthesis.speak(u);
+  var doSpeak=function(){
+    var u=new SpeechSynthesisUtterance(text);
+    u.lang=lang;
+    u.rate=0.85;
+    u.pitch=1.0;
+    u.volume=1.0;
+    if(v.length>0){
+      var langCode=lang.split('-')[0];
+      var p=null;
+      if(langCode==='en'){
+        p=v.find(function(x){return x.name==='Google US English';})
+         ||v.find(function(x){return x.name==='Samantha';})
+         ||v.find(function(x){return x.lang==='en-US'&&x.localService;})
+         ||v.find(function(x){return x.lang==='en-US';});
+      } else {
+        p=v.find(function(x){return x.lang===lang&&x.localService;})
+         ||v.find(function(x){return x.lang===lang;})
+         ||v.find(function(x){return x.lang.split('-')[0]===langCode&&x.localService;})
+         ||v.find(function(x){return x.lang.split('-')[0]===langCode;});
+      }
+      if(p)u.voice=p;
+    }
+    if(btn){btn.textContent='⏹';btn.classList.add('sp');_spk=btn;}
+    u.onend=function(){if(btn){btn.textContent='🔊';btn.classList.remove('sp');}  _spk=null;};
+    u.onerror=function(){if(btn){btn.textContent='🔊';btn.classList.remove('sp');} _spk=null;};
+    window.speechSynthesis.speak(u);
+  };
+  if(v.length===0){
+    setTimeout(function(){v=window.speechSynthesis.getVoices();doSpeak();},300);
+  } else {
+    doSpeak();
+  }
 }
 function spkResult(){
   var el=document.getElementById('tr-result-txt');if(!el)return;
