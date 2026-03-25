@@ -1315,13 +1315,8 @@ function trGo(){
   var label={zh:'中文',en:'English',ja:'日本語',ko:'한국어'}[__trLang];
   var slMap={zh:'zh-TW',en:'en-US',ja:'ja',ko:'ko'};
   var tlMap={zh:'zh-TW',en:'en-US',ja:'ja',ko:'ko'};
-  var sl='zh-TW';
+  var sl='auto';
   var tl=tlMap[__trLang]||'ja';
-  // 嘗試偵測輸入語言
-  if(/[\u3040-\u30FF\u4E00-\u9FFF]/.test(text)&&__trLang==='zh'){
-    res.innerHTML='<span style="color:#E24B4A">目標語言與輸入相同，請選擇要翻譯成的語言</span>';
-    return;
-  }
   var url='https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair='+sl+'|'+tl+'&de=travel@example.com';
   fetch(url)
     .then(function(r){return r.json();})
