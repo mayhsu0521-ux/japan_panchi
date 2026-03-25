@@ -1314,9 +1314,14 @@ function trGo(){
   res.innerHTML='<span style="color:#aaa">翻譯中…</span>';
   var label={zh:'中文',en:'English',ja:'日本語',ko:'한국어'}[__trLang];
   var slMap={zh:'zh-TW',en:'en-US',ja:'ja',ko:'ko'};
-  var tlMap={zh:'zh-TW',en:'en-US',ja:'ja',ko:'ko'};
-  var sl='auto';
+  var tlMap={zh:'zh-TW',en:'en',ja:'ja',ko:'ko'};
   var tl=tlMap[__trLang]||'ja';
+  // 偵測輸入語言決定 sl
+  var sl;
+  if(/[\u3040-\u309F\u30A0-\u30FF]/.test(text)) sl='ja';        // 平假名/片假名 → 日文
+  else if(/[\uAC00-\uD7AF]/.test(text)) sl='ko';                // 韓文
+  else if(/[\u4E00-\u9FFF]/.test(text)) sl='zh-TW';             // 中文漢字
+  else sl='en';                                                   // 預設英文
   var url='https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair='+sl+'|'+tl+'&de=travel@example.com';
   fetch(url)
     .then(function(r){return r.json();})
