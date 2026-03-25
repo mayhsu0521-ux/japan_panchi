@@ -1251,7 +1251,6 @@ function bkRender(data){
 (function(){var d=document.getElementById('bk-date');if(d)d.value=new Date().toISOString().split('T')[0];})();
 
 // ── Translation ──
-var __trLang='zh';
 var PHRASES=[
   {zh:'謝謝',en:'Thank you',ja:'ありがとうございます',ko:'감사합니다'},
   {zh:'不好意思，請問…',en:'Excuse me...',ja:'すみません…',ko:'저기요…'},
@@ -1301,10 +1300,112 @@ function buildEmg(){
   }).join('');
 }
 
-function setTrBtn(btn){
-  document.querySelectorAll('#tr-zh,#tr-en,#tr-ja,#tr-ko').forEach(function(b){b.classList.remove('on')});
-  btn.classList.add('on');
-}
+// ── 離線字典 ──
+var DICT=[
+  // 基本禮貌
+  {zh:'謝謝',en:'Thank you',ja:'ありがとうございます',ko:'감사합니다'},
+  {zh:'非常感謝',en:'Thank you very much',ja:'どうもありがとうございます',ko:'정말 감사합니다'},
+  {zh:'不客氣',en:"You're welcome",ja:'どういたしまして',ko:'천만에요'},
+  {zh:'對不起',en:'I\'m sorry',ja:'すみません',ko:'죄송합니다'},
+  {zh:'不好意思',en:'Excuse me',ja:'すみません',ko:'저기요'},
+  {zh:'請',en:'Please',ja:'お願いします',ko:'부탁합니다'},
+  {zh:'好的',en:'OK',ja:'はい',ko:'네'},
+  {zh:'不',en:'No',ja:'いいえ',ko:'아니요'},
+  // 問候
+  {zh:'你好嗎',en:'How are you',ja:'お元気ですか',ko:'잘 지내세요',kana:'おげんきですか'},
+  {zh:'我很好',en:'I\'m fine',ja:'元気です',ko:'잘 지내요',kana:'げんきです'},
+  {zh:'你好',en:'Hello',ja:'こんにちは',ko:'안녕하세요',kana:'こんにちは'},
+  {zh:'早安',en:'Good morning',ja:'おはようございます',ko:'안녕하세요'},
+  {zh:'晚安',en:'Good night',ja:'おやすみなさい',ko:'안녕히 주무세요'},
+  {zh:'再見',en:'Goodbye',ja:'さようなら',ko:'안녕히 가세요'},
+  // 購物
+  {zh:'多少錢',en:'How much',ja:'いくらですか',ko:'얼마예요'},
+  {zh:'太貴了',en:'Too expensive',ja:'高すぎます',ko:'너무 비싸요'},
+  {zh:'便宜一點',en:'A little cheaper please',ja:'もう少し安くしてください',ko:'조금 더 싸게 해주세요'},
+  {zh:'我要買這個',en:'I\'ll take this',ja:'これをください',ko:'이것 주세요'},
+  {zh:'可以試穿嗎',en:'Can I try this on',ja:'試着できますか',ko:'입어봐도 돼요'},
+  {zh:'有沒有大一點',en:'Do you have a bigger size',ja:'もっと大きいサイズはありますか',ko:'더 큰 사이즈 있어요'},
+  {zh:'有沒有小一點',en:'Do you have a smaller size',ja:'もっと小さいサイズはありますか',ko:'더 작은 사이즈 있어요'},
+  {zh:'可以刷卡嗎',en:'Can I pay by card',ja:'カードで払えますか',ko:'카드 되나요'},
+  {zh:'可以用支付寶嗎',en:'Can I use Alipay',ja:'アリペイは使えますか',ko:'알리페이 되나요'},
+  {zh:'袋子',en:'Bag',ja:'袋',ko:'봉투'},
+  {zh:'收據',en:'Receipt',ja:'レシート',ko:'영수증'},
+  {zh:'退稅',en:'Tax refund',ja:'免税',ko:'세금 환급'},
+  {zh:'免稅',en:'Tax free',ja:'免税',ko:'면세'},
+  // 餐廳
+  {zh:'好吃',en:'Delicious',ja:'美味しい',ko:'맛있어요'},
+  {zh:'菜單',en:'Menu',ja:'メニュー',ko:'메뉴'},
+  {zh:'推薦',en:'Recommend',ja:'おすすめ',ko:'추천'},
+  {zh:'不辣',en:'Not spicy',ja:'辛くしないでください',ko:'안 맵게 해주세요'},
+  {zh:'素食',en:'Vegetarian',ja:'ベジタリアン',ko:'채식'},
+  {zh:'過敏',en:'Allergy',ja:'アレルギー',ko:'알레르기'},
+  {zh:'打包帶走',en:'To go',ja:'持ち帰り',ko:'포장해 주세요'},
+  {zh:'再一杯',en:'One more please',ja:'もう一杯ください',ko:'한 잔 더 주세요'},
+  {zh:'結帳',en:'Check please',ja:'お会計をお願いします',ko:'계산해 주세요'},
+  {zh:'分開付',en:'Split the bill',ja:'別々に払います',ko:'따로 계산해 주세요'},
+  {zh:'水',en:'Water',ja:'水',ko:'물'},
+  {zh:'冰水',en:'Ice water',ja:'お冷',ko:'냉수'},
+  {zh:'熱水',en:'Hot water',ja:'お湯',ko:'뜨거운 물'},
+  {zh:'預約',en:'Reservation',ja:'予約',ko:'예약'},
+  // 交通
+  {zh:'車站在哪裡',en:'Where is the station',ja:'駅はどこですか',ko:'역이 어디예요'},
+  {zh:'廁所在哪裡',en:'Where is the restroom',ja:'トイレはどこですか',ko:'화장실이 어디예요'},
+  {zh:'出口在哪裡',en:'Where is the exit',ja:'出口はどこですか',ko:'출구가 어디예요'},
+  {zh:'我想去這裡',en:'I want to go here',ja:'ここに行きたいです',ko:'여기 가고 싶어요'},
+  {zh:'我迷路了',en:'I\'m lost',ja:'道に迷いました',ko:'길을 잃었어요'},
+  {zh:'地圖',en:'Map',ja:'地図',ko:'지도'},
+  {zh:'計程車',en:'Taxi',ja:'タクシー',ko:'택시'},
+  {zh:'地鐵',en:'Subway',ja:'地下鉄',ko:'지하철'},
+  {zh:'公車',en:'Bus',ja:'バス',ko:'버스'},
+  {zh:'幾點開門',en:'What time do you open',ja:'何時に開きますか',ko:'몇 시에 열어요'},
+  {zh:'幾點關門',en:'What time do you close',ja:'何時に閉まりますか',ko:'몇 시에 닫아요'},
+  // 住宿
+  {zh:'入住',en:'Check in',ja:'チェックイン',ko:'체크인'},
+  {zh:'退房',en:'Check out',ja:'チェックアウト',ko:'체크아웃'},
+  {zh:'房間',en:'Room',ja:'部屋',ko:'방'},
+  {zh:'Wi-Fi密碼',en:'Wi-Fi password',ja:'Wi-Fiのパスワード',ko:'와이파이 비밀번호'},
+  // 緊急
+  {zh:'救命',en:'Help',ja:'助けてください',ko:'도와주세요'},
+  {zh:'救護車',en:'Ambulance',ja:'救急車',ko:'구급차'},
+  {zh:'警察',en:'Police',ja:'警察',ko:'경찰'},
+  {zh:'醫院',en:'Hospital',ja:'病院',ko:'병원'},
+  {zh:'我生病了',en:'I\'m sick',ja:'具合が悪いです',ko:'아파요'},
+  {zh:'東西被偷了',en:'I was robbed',ja:'盗まれました',ko:'도둑맞았어요'},
+  // 情緒感受
+  {zh:'睏了',en:'Sleepy',ja:'眠い',ko:'졸려요',kana:'ねむい'},
+  {zh:'累了',en:'Tired',ja:'疲れました',ko:'피곤해요',kana:'つかれました'},
+  {zh:'肚子餓',en:'Hungry',ja:'お腹が空きました',ko:'배고파요',kana:'おなかがすきました'},
+  {zh:'好熱',en:'So hot',ja:'暑いです',ko:'더워요'},
+  {zh:'好冷',en:'So cold',ja:'寒いです',ko:'추워요'},
+  {zh:'開心',en:'Happy',ja:'嬉しい',ko:'기뻐요'},
+  {zh:'好玩',en:'Fun',ja:'楽しい',ko:'재밌어요'},
+  {zh:'好看',en:'Beautiful',ja:'きれい',ko:'예뻐요'},
+  {zh:'好可愛',en:'So cute',ja:'かわいい',ko:'귀여워요'},
+  {zh:'好厲害',en:'Amazing',ja:'すごい',ko:'대단해요'},
+  // 數字
+  {zh:'一',en:'One',ja:'いち／1',ko:'일/하나'},
+  {zh:'二',en:'Two',ja:'に／2',ko:'이/둘'},
+  {zh:'三',en:'Three',ja:'さん／3',ko:'삼/셋'},
+  {zh:'五',en:'Five',ja:'ご／5',ko:'오/다섯'},
+  {zh:'十',en:'Ten',ja:'じゅう／10',ko:'십/열'},
+  {zh:'百',en:'Hundred',ja:'ひゃく／100',ko:'백'},
+  {zh:'千',en:'Thousand',ja:'せん／1000',ko:'천'},
+  // 日本特色
+  {zh:'溫泉',en:'Hot spring',ja:'温泉',ko:'온천'},
+  {zh:'神社',en:'Shrine',ja:'神社',ko:'신사'},
+  {zh:'寺廟',en:'Temple',ja:'お寺',ko:'사원'},
+  {zh:'便利商店',en:'Convenience store',ja:'コンビニ',ko:'편의점'},
+  {zh:'藥妝店',en:'Drug store',ja:'ドラッグストア',ko:'드럭스토어'},
+  {zh:'百貨公司',en:'Department store',ja:'デパート',ko:'백화점'},
+  {zh:'超市',en:'Supermarket',ja:'スーパー',ko:'슈퍼마켓'},
+  {zh:'拉麵',en:'Ramen',ja:'ラーメン',ko:'라멘'},
+  {zh:'壽司',en:'Sushi',ja:'寿司／すし',ko:'스시'},
+  {zh:'天婦羅',en:'Tempura',ja:'天ぷら',ko:'덴푸라'},
+  {zh:'燒肉',en:'BBQ',ja:'焼肉',ko:'야키니쿠'},
+  {zh:'居酒屋',en:'Izakaya bar',ja:'居酒屋',ko:'이자카야'},
+  {zh:'清酒',en:'Sake',ja:'日本酒',ko:'사케'},
+  {zh:'抹茶',en:'Matcha',ja:'抹茶',ko:'말차'},
+];
 
 function trGo(){
   var text=document.getElementById('tr-inp').value.trim();
@@ -1313,21 +1414,33 @@ function trGo(){
   res.style.display='block';
   res.innerHTML='<span style="color:#aaa">翻譯中…</span>';
   var label={zh:'中文',en:'English',ja:'日本語',ko:'한국어'}[__trLang];
-  var tlMap={zh:'zh-TW',en:'en',ja:'ja',ko:'ko'};
-  var tl=tlMap[__trLang]||'ja';
-  // 用 Google Translate（支援 auto 偵測來源語言）
-  var url='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl='+tl+'&dt=t&q='+encodeURIComponent(text);
-  fetch(url)
-    .then(function(r){return r.json();})
-    .then(function(d){
+  var tl={zh:'zh-TW',en:'en',ja:'ja',ko:'ko'}[__trLang]||'zh-TW';
+  // JSONP 繞過 CORS
+  var cbName='_tr'+Date.now();
+  window[cbName]=function(d){
+    delete window[cbName];
+    var s=document.getElementById('_trscript');
+    if(s)s.remove();
+    try{
       var result=d[0].map(function(x){return x[0]||'';}).join('');
-      if(!result) throw new Error('empty');
-      res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
+      if(!result)throw new Error('empty');
+      res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div>'
+        +'<div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
       document.getElementById('tr-speak-wrap').style.display='block';
-    })
-    .catch(function(){
+    }catch(e){
       res.innerHTML='<span style="color:#E24B4A">翻譯失敗，請確認網路連線</span>';
-    });
+    }
+  };
+  var old=document.getElementById('_trscript');
+  if(old)old.remove();
+  var s=document.createElement('script');
+  s.id='_trscript';
+  s.onerror=function(){
+    res.innerHTML='<span style="color:#E24B4A">翻譯失敗，請確認網路連線</span>';
+    delete window[cbName];
+  };
+  s.src='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl='+tl+'&dt=t&callback='+cbName+'&q='+encodeURIComponent(text);
+  document.head.appendChild(s);
 }
 
 // ── Speech ──
