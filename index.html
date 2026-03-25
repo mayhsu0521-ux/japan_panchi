@@ -1331,8 +1331,8 @@ function trGo(){
         res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
         document.getElementById('tr-speak-wrap').style.display='block';
       } else {
-        // fallback: 嘗試不帶 email
-        return fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair=zh|'+tl)
+        // fallback: 不帶 email，但用偵測到的 sl
+        return fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair='+sl+'|'+tl)
           .then(function(r2){return r2.json();})
           .then(function(d2){
             if(d2.responseStatus===200&&d2.responseData&&d2.responseData.translatedText){
@@ -1340,7 +1340,7 @@ function trGo(){
               res.innerHTML='<div style="font-size:11px;color:#aaa;margin-bottom:6px">→ '+label+'</div><div style="font-size:16px;font-weight:500" id="tr-result-txt">'+result+'</div>';
               document.getElementById('tr-speak-wrap').style.display='block';
             } else {
-              res.innerHTML='<span style="color:#E24B4A">翻譯失敗（'+d2.responseStatus+'）</span>';
+              res.innerHTML='<span style="color:#E24B4A">翻譯失敗，請稍後再試</span>';
             }
           });
       }
